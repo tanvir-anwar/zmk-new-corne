@@ -13,58 +13,40 @@ If you need a 3D model of this keyboard, email `380465425@qq.com`.
 When you press the keys Q, S and Z simultaneously and hold them for 2 seconds, the keyboard will enter a deep sleep state and cannot be awakened by pressing the keys. This function can be used when carrying it outside. 
 The activation method is to press the reset switch once. 
 
-## Local Build Workflow (Recommended)
+## Keymap Diagram Generation (Local)
 
-Build firmware and generate keymap diagrams entirely offline — no GitHub Actions required. After a one-time setup, no network access is needed.
+Generate keymap diagrams locally to validate syntax before pushing.
 
 ### One-time setup
 
 ```bash
-# Install uv (Python package manager)
-brew install uv
-
-# Install ZMK CLI (includes West)
-uv tool install zmk
-
-# Create a virtual environment and install keymap-drawer
 python3 -m venv .venv
 source .venv/bin/activate
 pip install keymap-drawer
-
-# Initialize the ZMK workspace (fetches ZMK v0.3.0 once)
-zmk init
 ```
 
-### Edit → Build → Flash (offline)
+### Parse and draw
 
 ```bash
-# 1. Edit your keymap
-$EDITOR config/eyelash_corne.keymap
-
-# 2. Build firmware
-zmk build -b eyelash_corne_left
-zmk build -b eyelash_corne_right
-
-# 3. Generate keymap diagram
 source .venv/bin/activate
 keymap parse -z config/eyelash_corne.keymap > keymap-drawer/eyelash_corne.yaml
 keymap -c keymap_drawer.config.yaml draw keymap-drawer/eyelash_corne.yaml > keymap-drawer/eyelash_corne.svg
-
-# 4. Flash — put each half into bootloader mode (double-tap reset),
-#    then drag the .uf2 file onto the USB mass storage drive
 ```
+
+Parsing catches syntax errors faster than a full firmware build.
 
 ### Quick remapping via ZMK Studio (no build needed)
 
 For simple key binding changes, connect the left half via USB-C and open [ZMK Studio](https://zmk.studio/) in Chrome/Edge. Changes are applied live over USB — no tools or network access required.
 
-## GitHub Actions (Not Recommended)
+## Firmware Build (GitHub Actions)
 
-1. [Click the **Actions** tab and make sure the workflow is enabled](https://docs.github.com/en/actions/managing-workflow-runs-and-deployments/managing-workflow-runs/disabling-and-enabling-a-workflow#enabling-a-workflow).
-2. Make sure the `eyelash_corne` project in [`config/west.yml`](config/west.yml) still works. The `boards/arm/eyelash_corne` folder will be downloaded from this URL.
-3. If there is still a `boards/arm/eyelash_corne` folder in your fork, delete it.
+Firmware is compiled via GitHub Actions — local builds require a full [Zephyr SDK](https://docs.zephyrproject.org/latest/develop/getting_started/index.html) and ARM toolchain which are not included in this repo.
 
-**If you already have a ZMK config repository, [you can add this one as a module instead of forking](https://zmk.dev/docs/features/modules#building-with-modules).**
+1. Push your changes to GitHub.
+2. [Ensure the Actions workflow is enabled](https://docs.github.com/en/actions/managing-workflow-runs-and-deployments/managing-workflow-runs/disabling-and-enabling-a-workflow#enabling-a-workflow).
+3. Download the `.uf2` firmware artifacts from the completed workflow run.
+4. Flash — put each half into bootloader mode (double-tap reset), then drag the `.uf2` file onto the USB mass storage drive.
 
 ### Security Notes
 

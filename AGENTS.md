@@ -65,7 +65,7 @@ Keymap changes use a **markdown-first staging workflow**:
    keymap parse -z config/eyelash_corne.keymap > keymap-drawer/eyelash_corne.yaml
    keymap -c keymap_drawer.config.yaml draw keymap-drawer/eyelash_corne.yaml > keymap-drawer/eyelash_corne.svg
    ```
-5. **Build and flash** — compile firmware and flash both halves to test.
+5. **Build and flash** — push to GitHub, download `.uf2` artifacts from the Actions workflow, and flash both halves.
 
 The KEYMAP.md legend documents notation conventions (`hold/tap`, `[Sh/Caps]`, `<K1/K2>`, etc.) that map to specific ZMK behaviors. When adding new behavior types, update the legend first.
 
