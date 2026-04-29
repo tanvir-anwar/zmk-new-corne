@@ -52,6 +52,18 @@ Firmware is built via **GitHub Actions** (`.github/workflows/build.yml`). The `b
 
 Output: `.uf2` firmware files flashed via USB mass storage mode.
 
+## Keymap Change Workflow
+
+Keymap changes use a **markdown-first staging workflow**:
+
+1. **Stage changes in `config/KEYMAP.md`** — edit the human-readable markdown tables to describe the desired layout. This is the design document; it's easier to review and reason about than raw devicetree syntax.
+2. **Review the diff** — use `git diff config/KEYMAP.md` to verify the proposed changes make sense before touching firmware code.
+3. **Update `config/eyelash_corne.keymap`** — translate the markdown tables into ZMK devicetree bindings. New behaviors (tap-dance, mod-morph, hold-tap) must be defined in the `behaviors {}` block before referencing them in layer bindings.
+4. **Build and flash** — compile firmware and flash both halves to test.
+5. **Regenerate the diagram** — run keymap-drawer to update the SVG so it stays in sync.
+
+The KEYMAP.md legend documents notation conventions (`hold/tap`, `[Sh/Caps]`, `<K1/K2>`, etc.) that map to specific ZMK behaviors. When adding new behavior types, update the legend first.
+
 ## Conventions
 
 - The board definition exists locally in `boards/arm/eyelash_corne/` **and** is referenced as a remote module in `config/west.yml` (from `github.com/a741725193/zmk-new_corne`). The local copy takes precedence.
