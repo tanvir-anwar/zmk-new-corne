@@ -1,23 +1,84 @@
-- [Chinese](README.md)
-- [English](README_EN.md)
-
-# 睫毛外设 (Eyelash Peripherals) Corne ZMK Repository
+# (Eyelash Peripherals) Corne ZMK Repository
 
 **This keyboard is not the same as [foostan's Corne](https://github.com/foostan/crkbd). It will not work with standard `corne` firmware.**
 
-![Photo of Eyelash Peripherals Corne](https://ae01.alicdn.com/kf/Sa797fee25edd44248fbfdb0e13d44e00B.jpg)
-
 If you need a 3D model of this keyboard, email `380465425@qq.com`.
-2025.8.22 update the soft off.When you press the keys Q, S and Z simultaneously and hold them for 2 seconds, the keyboard will enter a deep sleep state and cannot be awakened by pressing the keys. This function can be used when carrying it outside. The activation method is to press the reset switch once.This month, I also updated the ultra-thin versions of the corne and sofle cases. The frame and base plate have been thickened, and the opening of the reset switch has been adjusted, so that the reset switch can be easily pressed. At present, we are still conceptualizing how to design the shell with an inclined bracket.If you have carefully examined a PCB, you will notice that there are reserved interfaces for expansion IO. I wonder if anyone has been able to utilize them,I will try it！
+
+### New changes
+2025.8.22 update the soft off. 
+When you press the keys Q, S and Z simultaneously and hold them for 2 seconds, the keyboard will enter a deep sleep state and cannot be awakened by pressing the keys. This function can be used when carrying it outside. 
+The activation method is to press the reset switch once. 
 
 ## Instructions
 
-1. [Fork this repository](https://docs.github.com/en/get-started/quickstart/fork-a-repo#forking-a-repository).
-2. [Click the **Actions** tab and make sure the workflow is enabled](https://docs.github.com/en/actions/managing-workflow-runs-and-deployments/managing-workflow-runs/disabling-and-enabling-a-workflow#enabling-a-workflow).
-3. Make sure the `eyelash_corne` project in [`config/west.yml`](config/west.yml) still works. The `boards/arm/eyelash_corne` folder will be downloaded from this URL.
-4. If there is still a `boards/arm/eyelash_corne` folder in your fork, delete it.
+1. [Click the **Actions** tab and make sure the workflow is enabled](https://docs.github.com/en/actions/managing-workflow-runs-and-deployments/managing-workflow-runs/disabling-and-enabling-a-workflow#enabling-a-workflow).
+2. Make sure the `eyelash_corne` project in [`config/west.yml`](config/west.yml) still works. The `boards/arm/eyelash_corne` folder will be downloaded from this URL.
+3. If there is still a `boards/arm/eyelash_corne` folder in your fork, delete it.
 
 **If you already have a ZMK config repository, [you can add this one as a module instead of forking](https://zmk.dev/docs/features/modules#building-with-modules).**
+
+## Local Build Workflow (Recommended)
+
+Build firmware and generate keymap diagrams entirely offline — no GitHub Actions required. After a one-time setup, no network access is needed.
+
+### One-time setup
+
+```bash
+# Install uv (Python package manager)
+brew install uv
+
+# Install ZMK CLI (includes West)
+uv tool install zmk
+
+# Create a virtual environment and install keymap-drawer
+python3 -m venv .venv
+source .venv/bin/activate
+pip install keymap-drawer
+
+# Initialize the ZMK workspace (fetches ZMK v0.3.0 once)
+zmk init
+```
+
+### Edit → Build → Flash (offline)
+
+```bash
+# 1. Edit your keymap
+$EDITOR config/eyelash_corne.keymap
+
+# 2. Build firmware
+zmk build -b eyelash_corne_left
+zmk build -b eyelash_corne_right
+
+# 3. Generate keymap diagram
+source .venv/bin/activate
+keymap parse -z config/eyelash_corne.keymap > keymap-drawer/eyelash_corne.yaml
+keymap draw -c keymap_drawer.config.yaml keymap-drawer/eyelash_corne.yaml > keymap-drawer/eyelash_corne.svg
+
+# 4. Flash — put each half into bootloader mode (double-tap reset),
+#    then drag the .uf2 file onto the USB mass storage drive
+```
+
+### Quick remapping via ZMK Studio (no build needed)
+
+For simple key binding changes, connect the left half via USB-C and open [ZMK Studio](https://zmk.studio/) in Chrome/Edge. Changes are applied live over USB — no tools or network access required.
+
+## Security Notes
+
+This fork was audited for supply-chain and hardware security risks. Below is a summary of findings and actions taken.
+
+### Resolved: Remote board module pinned to local only
+
+The upstream `config/west.yml` pulls the board definition from `github.com/a741725193/zmk-new_corne` at `revision: main` (unpinned). Since this feeds directly into firmware compilation, an unreviewed upstream push could alter pin mappings, flash partitions, or BLE configuration.
+
+**Action taken**: The remote module reference in `config/west.yml` has been commented out. The build now uses only the local `boards/arm/eyelash_corne/` directory. To re-enable the remote, pin it to a specific audited commit SHA.
+
+### Accepted: Keymap Drawer workflow unpinned (`@main`)
+
+The `.github/workflows/draw.yml` workflow references `caksoylar/keymap-drawer` at `@main` with `contents: write` permission. This is a diagram generation utility maintained by a well-known ZMK community contributor. It only produces SVG files in `keymap-drawer/` and cannot affect firmware builds. Commits it creates are clearly labeled `[Draw]`. The risk is negligible for this use case.
+
+### Accepted: ZMK Studio locking disabled
+
+The left half build includes `-DCONFIG_ZMK_STUDIO_LOCKING=n`, allowing keymap changes via USB without authentication. This requires physical access to the keyboard and is appropriate for personal use. Changes made via Studio can be reset. Re-enable locking (`-DCONFIG_ZMK_STUDIO_LOCKING=y`) if the keyboard will be used in a shared or untrusted environment.
 
 ## Keymap Diagram
 

@@ -7,9 +7,11 @@ manifest:
       # - https://zmk.dev/docs/features/modules
       # - https://docs.zephyrproject.org/3.5.0/develop/west/manifest.html#projects
   projects:
-    - name: eyelash_corne
-      url: https://github.com/a741725193/zmk-new_corne
-      revision: main
+    # Commented out: board definition is available locally in boards/arm/eyelash_corne/
+    # Pin to a specific commit SHA before re-enabling.
+    # - name: eyelash_corne
+    #   url: https://github.com/a741725193/zmk-new_corne
+    #   revision: main
     - name: zmk
       remote: zmkfirmware
       revision: v0.3.0
