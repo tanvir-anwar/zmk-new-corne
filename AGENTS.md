@@ -59,8 +59,13 @@ Keymap changes use a **markdown-first staging workflow**:
 1. **Stage changes in `config/KEYMAP.md`** — edit the human-readable markdown tables to describe the desired layout. This is the design document; it's easier to review and reason about than raw devicetree syntax.
 2. **Review the diff** — use `git diff config/KEYMAP.md` to verify the proposed changes make sense before touching firmware code.
 3. **Update `config/eyelash_corne.keymap`** — translate the markdown tables into ZMK devicetree bindings. New behaviors (tap-dance, mod-morph, hold-tap) must be defined in the `behaviors {}` block before referencing them in layer bindings.
-4. **Build and flash** — compile firmware and flash both halves to test.
-5. **Regenerate the diagram** — run keymap-drawer to update the SVG so it stays in sync.
+4. **Parse and generate the diagram** — validates the keymap syntax and catches errors faster than a full firmware build:
+   ```bash
+   source .venv/bin/activate
+   keymap parse -z config/eyelash_corne.keymap > keymap-drawer/eyelash_corne.yaml
+   keymap -c keymap_drawer.config.yaml draw keymap-drawer/eyelash_corne.yaml > keymap-drawer/eyelash_corne.svg
+   ```
+5. **Build and flash** — compile firmware and flash both halves to test.
 
 The KEYMAP.md legend documents notation conventions (`hold/tap`, `[Sh/Caps]`, `<K1/K2>`, etc.) that map to specific ZMK behaviors. When adding new behavior types, update the legend first.
 

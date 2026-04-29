@@ -48,7 +48,7 @@ zmk build -b eyelash_corne_right
 # 3. Generate keymap diagram
 source .venv/bin/activate
 keymap parse -z config/eyelash_corne.keymap > keymap-drawer/eyelash_corne.yaml
-keymap draw -c keymap_drawer.config.yaml keymap-drawer/eyelash_corne.yaml > keymap-drawer/eyelash_corne.svg
+keymap -c keymap_drawer.config.yaml draw keymap-drawer/eyelash_corne.yaml > keymap-drawer/eyelash_corne.svg
 
 # 4. Flash — put each half into bootloader mode (double-tap reset),
 #    then drag the .uf2 file onto the USB mass storage drive
