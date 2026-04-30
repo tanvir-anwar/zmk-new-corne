@@ -14,15 +14,15 @@ When the power switch is disconnected and USB power is connected, the green ligh
 ### Restart / Flashing
 There will also be a press switch near the keyboard switch, pressing it will restart the keyboard.
 Plug in the USB cable and press the keyboard twice in a row within 0.5 seconds to enter firmware flashing mode. When flashing firmware mode, the blue light is in a breathing state. The firmware flashing mode is not connected to USB, and the blue light flashes rapidly. 
-After connecting the keyboard to USB and entering firmware flashing mode, the keyboard will turn into a USB disk in your computer. Put the left and right firmware into the virtual USB disk of the two keyboards ,then complete the firmware update. 
 
-There is no need to distinguish the order of firmware flashing between the left and right keyboards.
+For full flashing instructions, build artifacts, and settings reset procedure, see the [Firmware Build section in README.md](README.md#firmware-build-github-actions).
 
 ### Pairing
-After the keyboard is turned on, the left and right hands will automatically connect, and the left hand keyboard is the main keyboard. The pairing process of the left and right keyboards is completed during the first firmware update. Subsequent firmware updates will not clear the configuration information of the left and right hand connections. So after updating the firmware separately, the left and right keyboards will still remain connected. 
-If you need to reset the connection status of your left and right hands, you can flash the reset firmware separately and clear the pairing information. After clearing the pairing information and flashing in the keyboard firmware that needs to be updated, the left and right hands will automatically connect to another split keyboard that can be searched at this time but has not yet been connected.
+After the keyboard is turned on, the left and right hands will automatically connect, and the left hand keyboard is the main keyboard. Subsequent firmware updates will not clear the configuration information of the left and right hand connections unless you flash the settings reset firmware.
 
-The method of connecting the keyboard to the computer. The left hand is the main keyboard. After turning on the power switch, add a new device on the Bluetooth page of the computer or phone, or click on the option named 'corner/sofle' to complete the automatic connection. 
+If the halves won't pair or the right half stops sending keypresses, see the [Troubleshooting section in README.md](README.md#troubleshooting).
+
+The method of connecting the keyboard to the computer: the left hand is the main keyboard. After turning on the power switch, add a new device on the Bluetooth page of the computer or phone, or click on the option named 'corner/sofle' to complete the automatic connection. 
 When the connection is abnormal, it is necessary to clear the Bluetooth configuration information and then reconnect. To clear the configuration information, press BT_CLEAR_ALL (on the second layer of the keyboard, a combination of keys is required) to complete the operation of clearing the bluetooth configuration information. Then reconnect. 
 
 The keyboard can store 4-5 Bluetooth configuration files. Each file can be connected to a computer/phone. To achieve the requirement of controlling multiple computers with one keyboard. The current configuration file will be displayed on the keyboard screen. The meanings of various icons on the screen will be introduced later. It should be noted that when keyboard configuration 1 is connected to a computer, and the user accidentally touches the config2 keycode afterwards.Then your keyboard will not send the keycode to your computer.The serial number of the configuration file can be displayed on the
@@ -119,23 +119,23 @@ The keyboard screen cover is made of tempered glass material and is fixed with M
 > If you have hardware issues you can contact 380465425@qq.com
 
 ## Troubleshooting
+
+For flashing, pairing, settings reset, and BLE connection issues between halves, see the [Troubleshooting section in README.md](README.md#troubleshooting).
+
+The items below cover hardware-specific issues only.
+
 1. The keyboard is unresponsive. Please check if the power switch is turned on.
 2. Not fully charged. Please check if the switch is turned on and the charging status can be determined by the green indicator LED status.
-3. The keyboard cannot connect to the computer by Bluetooth. Clear the Bluetooth connection on the keyboard and reconnect using the BT_CLEAR_ALL keycode。
-4. Poor Bluetooth signal on keyboard. Check if the Bluetooth antenna on your desktop computer is installed correctly. It can also be tested by connecting other mobile phones and computers. Sometimes firmware flashing again can solve signal connectivity.
-5. The right-handed keyboard cannot connect to the main keyboard (left-handed
-keyboard). Check if the power switch is turned on and observe the logo on the screen debug. The keyboard has been paired before shipment. If the left and right keyboards need to be re-paired. They need to be connected to the computer separately using USB cables, then double-click the reset switch, finally flash the setting_reset firmware to clear the pairing information between the left and right hands of the keyboard. Afterwards, flash the normal firmware for the left and right keyboards separately.After swiping back into the keyboard, they will automatically connect to each other. Which one flashing first is not important.The pairing status check of the keyboard can be determined through key presses, specific logos on the screen, and backlight linkage control.
-6. If some button cannot be triggered. Check if the pins of the switch are inserted into the hot swappable switch socket. Because one foot of the button switch is relatively soft and prone to tilting, it makes the pin difficult to accurately insert the switch socket .
-7. The keyboard bluetooth is connected, but the keys on the computer do not respond. Perhaps the bluetooth configuration has been changed. As mentioned earlier, the computer is connected to configuration 1. If you accidentally touch other configurations, the computer will not receive the keycode.
-8. After connecting to the computer using USB-C, it cannot be triggered (Bluetooth not
+3. If some button cannot be triggered. Check if the pins of the switch are inserted into the hot swappable switch socket. Because one foot of the button switch is relatively soft and prone to tilting, it makes the pin difficult to accurately insert the switch socket.
+4. After connecting to the computer using USB-C, it cannot be triggered (Bluetooth not
 connected). Perhaps the data cable lacks data communication capability and can only be charged.
-9. The right-handed keyboard cannot be independently connected to a computer for use. The
+5. The right-handed keyboard cannot be independently connected to a computer for use. The
 USB-C port on the right-hand keyboard is only used for firmware updates and charging. The main control terminal of the keyboard is the left-handed keyboard, and any key code needs to be sent to the left-handed keyboard first, and then sent to the computer. So the right-handed keyboard does not have the function of being used independently.
-10. The battery life of the left keyboard is not as good as that of the right. Normal phenomenon, because the left-hand keyboard is the main keyboard, it consumes more electricity and has a shorter battery life.
-11. The keyboard power switch is damaged. It can be used with USB-C power supply plugged in, but there is no response during charging. The green light will flash forever. The power switch model for the new version of the corne is MINIMKS12C01, while the old versions of the Corne and sofle use the regular size MKS12C02. Users who cannot buy switches can also directly short-circuit the switch pads. Suggest sending it back to the merchant for after-sales processing. The reset press switch model for the new version of Core and Sofle is TS24CA.
-12. The signal of the left and right hands is poor and often disconnected. Firstly, try flashing the firmware again to resolve the issue. If the problem persists, you can flash the reset firmware . In addition, if there is severe interference, you can change the WiFi to the 5G frequency band and check if it is WiFi signal interference. The normal communication distance between left and right keyboards is about 0.6-0.8 meters.
-13. There is a noticeable delay in pressing the button. The reason is poor signal, and the troubleshooting method is consistent with the previous method for handling poor bluetooth signal.
-14. Adding certain keycodes to the keymap file will result in an error or no response when compiled. The newly added keycodes must be defined in the header file. The solution is to seek help from the ZMK discussion group.Using the graphical tool keymap_editor to modify keymaps can avoid most editing errors. Another document will have a separate introduction.
-15. Use ZMK tool yourself and choose NICE!Nano and CORNE to make new firmware.But they
-cannot be used after flashing. As mentioned earlier, the hardware definition of a keyboard may be the same or different. We need to use the GitHub repository provided by the seller for compilation,.
-16. The battery life is particularly short. The power-ext function can be manually turned off by pressing the EP_OFF keycode. If the backlight is turned on and off again, power-ext will also be turned off.
+6. The battery life of the left keyboard is not as good as that of the right. Normal phenomenon, because the left-hand keyboard is the main keyboard, it consumes more electricity and has a shorter battery life.
+7. The keyboard power switch is damaged. It can be used with USB-C power supply plugged in, but there is no response during charging. The green light will flash forever. The power switch model for the new version of the corne is MINIMKS12C01, while the old versions of the Corne and sofle use the regular size MKS12C02. Users who cannot buy switches can also directly short-circuit the switch pads. Suggest sending it back to the merchant for after-sales processing. The reset press switch model for the new version of Core and Sofle is TS24CA.
+8. The signal of the left and right hands is poor and often disconnected. Firstly, try flashing the firmware again to resolve the issue. If the problem persists, you can flash the reset firmware. In addition, if there is severe interference, you can change the WiFi to the 5G frequency band and check if it is WiFi signal interference. The normal communication distance between left and right keyboards is about 0.6-0.8 meters.
+9. There is a noticeable delay in pressing the button. The reason is poor signal, and the troubleshooting method is consistent with the previous method for handling poor bluetooth signal.
+10. Adding certain keycodes to the keymap file will result in an error or no response when compiled. The newly added keycodes must be defined in the header file. The solution is to seek help from the ZMK discussion group. Using the graphical tool keymap_editor to modify keymaps can avoid most editing errors. Another document will have a separate introduction.
+11. Use ZMK tool yourself and choose NICE!Nano and CORNE to make new firmware. But they
+cannot be used after flashing. As mentioned earlier, the hardware definition of a keyboard may be the same or different. We need to use the GitHub repository provided by the seller for compilation.
+12. The battery life is particularly short. The power-ext function can be manually turned off by pressing the EP_OFF keycode. If the backlight is turned on and off again, power-ext will also be turned off.
