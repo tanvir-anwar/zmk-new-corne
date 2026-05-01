@@ -1,152 +1,152 @@
 layout: {zmk_keyboard: eyelash_corne}
 layers:
   QWERTY:
-  - {t: '$$mdi:keyboard-tab$$', s: '`'}
+  - {t: TAB, s: '`'}
   - Q
   - W
   - E
   - R
   - T
-  - $$mdi:arrow-up-bold$$
+  - UP
   - Y
   - U
   - I
   - O
   - P
   - {t: '-', s: '='}
-  - {t: '$$mdi:backspace$$', type: backspace}
+  - BSPC
   - A
   - S
   - D
   - F
   - G
-  - $$mdi:arrow-left-bold$$
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - $$mdi:arrow-right-bold$$
+  - LEFT
+  - ''
+  - RIGHT
   - H
   - J
   - K
   - L
-  - {t: ;, s: ':'}
-  - {t: '''', s: '"'}
+  - ;
+  - ''''
   - '&td0'
   - Z
   - X
   - C
   - V
   - B
-  - $$mdi:keyboard-space$$
-  - $$mdi:arrow-down-bold$$
+  - SPACE
+  - DOWN
   - N
   - M
-  - {t: ',', s: <}
-  - {t: ., s: '>'}
-  - {t: /, s: '?'}
-  - $$mdi:apple-keyboard-shift$$
-  - {t: '$$mdi:keyboard-esc$$', h: '$$mdi:apple-keyboard-option$$'}
-  - $$mdi:apple-keyboard-command$$
-  - {t: '$$mdi:keyboard-space$$', h: SYMBOL}
-  - $$mdi:keyboard-space$$
-  - {t: '$$mdi:keyboard-return$$', h: FUNC}
-  - $$mdi:apple-keyboard-control$$
+  - ','
+  - .
+  - /
+  - RSHIFT
+  - {t: ESC, h: LALT}
+  - LCMD
+  - {t: SPACE, h: SYMBOL}
+  - SPACE
+  - {t: ENTER, h: FUNC}
+  - RCTRL
   SYMBOL:
-  - {t: '`', s: '~'}
+  - '`'
   - '!'
   - '@'
   - '#'
   - $
   - '%'
-  - $$mdi:arrow-up-bold$$
+  - UP
   - ^
   - '&'
   - '*'
   - (
   - )
-  - {t: '=', s: +}
-  - {t: '$$mdi:backspace$$', type: backspace}
-  - {t: '1', s: '!'}
-  - {t: '2', s: '@'}
-  - {t: '3', s: '#'}
-  - {t: '4', s: $}
-  - {t: '5', s: '%'}
-  - $$mdi:arrow-left-bold$$
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - $$mdi:arrow-right-bold$$
-  - {t: '6', s: ^}
-  - {t: '7', s: '&'}
-  - {t: '8', s: '*'}
-  - {t: '9', s: (}
-  - {t: '0', s: )}
-  - {t: '-', s: _}
-  - $$mdi:apple-keyboard-shift$$
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
   - +
-  - {t: /, s: '?'}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - $$mdi:arrow-down-bold$$
-  - {t: '[', s: '{'}
-  - {t: ']', s: '}'}
+  - BSPC
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+  - LEFT
+  - ''
+  - RIGHT
+  - '6'
+  - '7'
+  - '8'
+  - '9'
+  - '0'
+  - '-'
+  - LSHIFT
+  - \
+  - '|'
+  - _
+  - '~'
+  - '='
+  - {t: ▽, type: trans}
+  - DOWN
+  - '['
+  - ']'
   - '{'
   - '}'
-  - {t: \, s: '|'}
-  - $$mdi:apple-keyboard-shift$$
-  - $$mdi:apple-keyboard-option$$
-  - $$mdi:apple-keyboard-command$$
+  - /
+  - RSHIFT
+  - LALT
+  - LCMD
   - {type: held}
-  - $$mdi:keyboard-space$$
-  - {t: '$$mdi:keyboard-return$$', type: enter}
-  - $$mdi:apple-keyboard-control$$
+  - SPACE
+  - RET
+  - RCTRL
   FUNC:
-  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: ▽, type: trans}
   - F3
-  - $$mdi:volume-off$$
-  - $$mdi:camera$$
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - $$mdi:arrow-up-bold$$
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - MUTE
+  - '&screenshot'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - UP
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - BT CLR ALL
-  - {h: '1', s: '$$mdi:bluetooth-connect$$'}
-  - {h: '2', s: '$$mdi:bluetooth-connect$$'}
-  - {h: '3', s: '$$mdi:bluetooth-connect$$'}
+  - {t: BT, h: '0'}
+  - {t: BT, h: '1'}
+  - {t: BT, h: '2'}
   - OUT USB
-  - $$mdi:arrow-left-bold$$
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - $$mdi:arrow-right-bold$$
-  - $$mdi:arrow-left-bold$$
-  - $$mdi:arrow-down-bold$$
-  - $$mdi:arrow-up-bold$$
-  - $$mdi:arrow-right-bold$$
-  - $$mdi:mouse-left-click-outline$$
-  - $$mdi:mouse-right-click-outline$$
-  - {t: '$$mdi:transfer$$', type: trans}
+  - LEFT
+  - ''
+  - RIGHT
+  - LEFT
+  - DOWN
+  - UP
+  - RIGHT
+  - '&mkp LCLK'
+  - '&mkp RCLK'
+  - {t: ▽, type: trans}
   - RGB OFF
   - RGB ON
   - RGB EFF
-  - {t: '$$mdi:backup-restore$$', type: bootloader}
+  - '&sys_reset'
   - '&soft_off'
-  - {t: '$$mdi:transfer$$', type: trans}
-  - $$mdi:arrow-down-bold$$
-  - ⌘←
-  - ⌘↓
-  - ⌘↑
-  - ⌘→
-  - {t: '$$mdi:transfer$$', type: trans}
-  - $$mdi:progress-download$$
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: ▽, type: trans}
+  - DOWN
+  - Gui+LEFT
+  - Gui+DOWN
+  - Gui+UP
+  - Gui+RIGHT
+  - {t: ▽, type: trans}
+  - '&bootloader'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {type: held}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: ▽, type: trans}
 combos:
 - p: [1, 15, 29]
   k: '&soft_off'
