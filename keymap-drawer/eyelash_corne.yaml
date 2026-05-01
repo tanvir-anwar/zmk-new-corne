@@ -1,7 +1,7 @@
 layout: {zmk_keyboard: eyelash_corne}
 layers:
   QWERTY:
-  - TAB
+  - {t: TAB, s: '`'}
   - Q
   - W
   - E
@@ -43,61 +43,12 @@ layers:
   - .
   - /
   - RSHIFT
-  - {t: '`', h: LALT}
-  - {t: ESC, h: LCMD}
+  - {t: ESC, h: LALT}
+  - LCMD
   - {t: SPACE, h: SYMBOL}
-  - {t: SPACE, h: NUMBER}
-  - {t: ENTER, h: Fn}
+  - SPACE
+  - {t: ENTER, h: FUNC}
   - RCTRL
-  NUMBER:
-  - {t: ▽, type: trans}
-  - '1'
-  - '2'
-  - '3'
-  - '4'
-  - '5'
-  - UP
-  - '6'
-  - '7'
-  - '8'
-  - '9'
-  - '0'
-  - BSPC
-  - {t: ▽, type: trans}
-  - BT CLR ALL
-  - {t: BT, h: '0'}
-  - {t: BT, h: '1'}
-  - {t: BT, h: '2'}
-  - {t: BT, h: '3'}
-  - LEFT
-  - ''
-  - RIGHT
-  - LEFT
-  - DOWN
-  - UP
-  - RIGHT
-  - HOME
-  - PG UP
-  - {t: ▽, type: trans}
-  - RGB OFF
-  - RGB ON
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - RGB EFF
-  - MUTE
-  - DOWN
-  - RGB EFR
-  - RGB SPI
-  - RGB BRI
-  - RGB BRD
-  - END
-  - PG DN
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: INS, type: held}
-  - DEL
-  - {t: ▽, type: trans}
   SYMBOL:
   - '`'
   - '!'
@@ -142,54 +93,54 @@ layers:
   - \
   - RSHIFT
   - LALT
-  - {t: ESC, h: LCMD}
+  - LCMD
   - {type: held}
   - SPACE
   - RET
   - RCTRL
-  Fn:
-  - '&studio_unlock'
-  - F1
-  - F2
+  FUNC:
+  - {t: ▽, type: trans}
   - F3
-  - F4
-  - F5
+  - MUTE
+  - '&screenshot'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - UP
-  - F6
-  - F7
-  - F8
-  - F9
-  - F10
-  - F11
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - BT CLR ALL
-  - BT CLR
-  - {t: ▽, type: trans}
-  - '&mkp RCLK'
-  - {t: ▽, type: trans}
+  - {t: BT, h: '0'}
+  - {t: BT, h: '1'}
+  - {t: BT, h: '2'}
+  - OUT USB
   - LEFT
   - ''
   - RIGHT
-  - '&bootloader'
+  - LEFT
+  - DOWN
+  - UP
+  - RIGHT
   - '&mkp LCLK'
-  - {t: ▽, type: trans}
   - '&mkp RCLK'
-  - PRINTSCREEN
-  - F12
   - {t: ▽, type: trans}
+  - RGB OFF
+  - RGB ON
+  - RGB EFF
   - '&sys_reset'
   - '&soft_off'
-  - '&bootloader'
   - {t: ▽, type: trans}
-  - '&mkp MB5'
-  - MUTE
   - DOWN
-  - {t: ▽, type: trans}
+  - Gui+LEFT
+  - Gui+DOWN
+  - Gui+UP
+  - Gui+RIGHT
   - {t: ▽, type: trans}
   - '&bootloader'
-  - '&sys_reset'
-  - SCROLLLOCK
-  - PAUSE BREAK
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}

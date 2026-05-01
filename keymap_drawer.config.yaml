@@ -204,6 +204,20 @@ parse_config:
       tap: $$mdi:apple-keyboard-shift$$
       hold: $$mdi:toggle-switch$$
 
+    # Screenshot macro
+    "&screenshot":
+      tap: $$mdi:camera$$
+
+    # Cmd+Arrow (macOS navigation)
+    "&kp LG(LEFT)":
+      tap: '⌘←'
+    "&kp LG(DOWN)":
+      tap: '⌘↓'
+    "&kp LG(UP)":
+      tap: '⌘↑'
+    "&kp LG(RIGHT)":
+      tap: '⌘→'
+
     # Empty
     "&none":
       tap: $$mdi:minus-circle-outline$$
