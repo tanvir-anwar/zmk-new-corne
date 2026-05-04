@@ -1,17 +1,14 @@
 # (Eyelash Peripherals) Corne ZMK Repository
 
+### Components
+
+1. Pre-soldered PCB and case - from [AliExpress Highland 3C Store](https://www.aliexpress.us/item/3256807477869827.html)
+2. Akko Cilantro Tactile Switch - from [Amazon](https://www.amazon.com/dp/B0F2MQKHD1)
+3. YMDK MX Keycaps - from [Amazon](https://www.amazon.com/dp/B07JKTQJQ7)
+
 ![image](corne-keyboard.jpg)
 
-Bought from AliExpress [Highland 3C Store](https://www.aliexpress.us/item/3256807477869827.html)
-
-**This keyboard is not the same as [foostan's Corne](https://github.com/foostan/crkbd). It will not work with standard `corne` firmware.**
-
-If you need a 3D model of this keyboard, email `380465425@qq.com`.
-
-### New changes
-2025.8.22 update the soft off. 
-When you press the keys Q, S and Z simultaneously and hold them for 2 seconds, the keyboard will enter a deep sleep state and cannot be awakened by pressing the keys. This function can be used when carrying it outside. 
-The activation method is to press the reset switch once. 
+_[How I got here](https://www.reddit.com/r/ErgoMechKeyboards/comments/1t0zbf7/joining_the_club/)_
 
 ## Keymap Diagram Generation (Local)
 
@@ -89,7 +86,14 @@ ZMK Studio overrides persist in flash and take priority over the compiled keymap
 **Keyboard won't connect to host computer via Bluetooth:**
 Press `BT_CLR_ALL` (Layer 1, leftmost key on the home row) to clear all host Bluetooth bonds, then re-pair from your computer's Bluetooth settings.
 
-### Security Notes
+## Notes
+**This keyboard is not the same as [foostan's Corne](https://github.com/foostan/crkbd). It will not work with standard `corne` firmware.**
+
+If you need a 3D model of this keyboard, email `380465425@qq.com`.
+
+### Soft off
+When you press the keys Q, S and Z simultaneously and hold them for 2 seconds, the keyboard will enter a deep sleep state and cannot be awakened by pressing the keys. This function can be used when carrying it outside.  
+The activation method is to press the reset switch once. 
 
 This fork was audited for supply-chain and hardware security risks. Below is a summary of findings and actions taken.
 
