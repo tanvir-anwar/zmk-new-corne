@@ -3,7 +3,7 @@
 ### Components
 
 1. Pre-soldered PCB and case - from [AliExpress Highland 3C Store](https://www.aliexpress.us/item/3256807477869827.html)
-2. Akko Cilantro Tactile Switch - from [Amazon](https://www.amazon.com/dp/B0F2MQKHD1)
+2. Akko ~~Cilantro Tactile~~ Rosewood Linear Switch - from [Amazon - Cilantro](https://www.amazon.com/dp/B0F2MQKHD1) / [Amazon - Rosewood](https://www.amazon.com/dp/B0D7VG2QJH)
 3. YMDK MX Keycaps - from [Amazon](https://www.amazon.com/dp/B07JKTQJQ7)
 
 ![image](corne-keyboard.jpg)
