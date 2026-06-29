@@ -5,6 +5,15 @@ Edit this file to describe desired changes, then update the keymap to match.
 
 The extra key (left of 5-way switch) and 5-way switch are omitted for clarity.
 
+## Design Philosophy
+
+- Modifier order Ctrl > Opt > Cmd to match other keyboards (least relearning).
+- Repurpose redundant keys: left Space → symbol-layer lock; LSHIFT → `caps` pinky.
+- Prefer hold-taps over tap-dance/mod-morph; guard pinky holds with `require-prior-idle-ms`.
+- `GLOBE` works for Globe-chords (emoji, Mission Control), not raw `Fn+key`.
+- Single Shift (right pinky) — revisit if same-hand shifting feels awkward.
+- L1 thumb on Layer 1 must stay transparent (it unlocks the toggled Symbol layer).
+
 ## Legend
 
 | Notation | Meaning |
@@ -12,10 +21,10 @@ The extra key (left of 5-way switch) and 5-way switch are omitted for clarity.
 | _(blank)_ | Transparent — falls through to the layer below |
 | _(none)_ | No action |
 | hold/tap | Hold for first action, tap for second |
-| [Sh/Caps] | Tap-dance — tap for Shift, double-tap for Caps Word |
-| L1/Space | Hold for Layer 1 (Symbol), tap for Space |
+| SHIFT/Caps_Word | Hold-tap — hold for Shift, tap for Caps Word |
+| &mo_tog L1 | Hold-tap — hold for momentary Layer 1, tap to toggle Layer 1 on/off (sticky) |
+| FUNC/BSLH | Hold for macOS Fn/Globe key, tap for Backslash |
 | L2/Enter | Hold for Layer 2 (Function), tap for Enter |
-| <K1/K2> | Mod morph — K1 for normal key press, K2 when RCTRL is pressed |
 | ⌘+key | Modified keycode — sends Cmd+key (not a macro) |
 | ⌘⇧4 | Screenshot macro — sends Cmd+Shift+4 |
 
@@ -26,36 +35,42 @@ The extra key (left of 5-way switch) and 5-way switch are omitted for clarity.
 
 ## Layer 0: QWERTY (default)
 
-| L       | L1 | L2 | L3 | L4 | L5 | R5 | R4 | R3 | R2 | R1 | R             |
-|---------|----|----|----|----|----|----|----|----|----|----|---------------|
-| <TAB/GRAVE> | Q  | W  | E  | R  | T  | Y  | U  | I  | O  | P  | <MINUS/EQUAL> |
-| BSPC    | A  | S  | D  | F  | G  | H  | J  | K  | L  | ;  | '             |
-| [Sh/Caps] | Z  | X  | C  | V  | B  | N  | M  | ,  | .  | /  | RSHIFT        |
-|         |    | ESC/LALT | LCMD | L1/Space | | Space | L2/Enter | RCTRL | | | |
+| L        | L1 | L2 | L3 | L4 | L5 | R5 | R4 | R3 | R2 | R1 | R       |
+|----------|----|----|----|----|----|----|----|----|----|----|---------|
+| TAB      | Q  | W  | E  | R  | T  | Y  | U  | I  | O  | P  | MINUS   |
+| BSPC     | A  | S  | D  | F  | G  | H  | J  | K  | L  | ;  | '       |
+| CTRL/ESC | Z  | X  | C  | V  | B  | N  | M  | ,  | .  | /  | SHIFT/Caps_Word |
+| | | | LALT/EQUAL | LCMD | &mo_tog L1 | Space | L2/Enter | FUNC/BSLH | | |    |
 
 Encoder: Volume Up / Down
 Arrow Keys: Arrow Keys
 
 ## Layer 1: SYMBOL (hold L1)
 
-| L      | L1 | L2 | L3 | L4 | L5 | R5 | R4 | R3 | R2 | R1   | R      |
-|--------|----|----|----|----|----|----|----|----|----|----- |--------|
-| GRAVE  | !  | @  | #  | $  | %  | ^  | &  | *  | (  | )    | +  |
-| BSPC   | 1  | 2  | 3  | 4  | 5  | 6  | 7  | 8  | 9  | 0    | MINUS  |
-| LSHIFT | BSLH  | PIPE | _ | ~  | =  | [  | ]  | {  | }  | / | RSHIFT |
-|        |    | LALT | LCMD |  |    | Space | Enter | RCTRL | | | |
+| L      | L1 | L2 | L3 | L4 | L5 | R5 | R4 | R3 | R2 | R1  | R |
+|--------|----|----|----|----|----|----|----|----|----|-----|---|
+| ~      | !  | @  | #  | $  | %  | ^  | &  | *  | (  | )   |   |
+| GRAVE  | 1  | 2  | 3  | 4  | 5  | 6  | 7  | 8  | 9  | 0   |   |
+|     | BSLH  | PIPE | _ | ~  | =  | [  | ]  | {  | }  | /  |   |
+|        |    |      |   |    |    |    |    |    |    |    |   |
 
 Encoder: Scroll Down / Up
 Arrow Keys: Arrow Keys
 
+> ⚠️ The L1 thumb position (under `&mo_tog 1 1` on Layer 0) is intentionally
+> left **transparent** here. Tapping `mo_tog` locks Layer 1 on; the unlock tap
+> falls through this transparent key to Layer 0's `mo_tog` to toggle it back off.
+> Do **not** assign a real binding here, or you will lose the ability to exit
+> the locked Symbol layer.
+
 ## Layer 2: FUNCTION (hold L2)
 
-| L    | L1         | L2       | L3         | L4    | L5       | R5       | R4       | R3       | R2       | R1     | R          |
-|------|------------|----------|------------|-------|----------|----------|----------|----------|----------|--------|------------|
-|      | F3         | Mute     | ⌘⇧4       |       |          |          |          |          |          |        |            |
-|      | BT Clr All | BT 0     | BT 1       | BT 2  | USB      | ←        | ↓        | ↑        | →        | LClick | RClick     |
-|      | RGB Off    | RGB On   | RGB Eff    | Reset | Soft Off | ⌘+←      | ⌘+↓     | ⌘+↑     | ⌘+→     |        | Bootloader |
-|      |            |          |            |       |          |          |          |          |          |        |            |
+| L | L1         | L2     | L       | L4    | L5       | R5  | R4  | R3  | R2  | R1     | R      |
+|---|------------|--------|---------|-------|----------|-----|-----|-----|-----|--------|--------|
+|   |            | Mute   |   F3    | ⌘⇧4   |          |     |     |     |     |        |        |
+|   | BT Clr All | BT 0   |         |       | USB      | ←   | ↓   | ↑   | →   | LClick | RClick |
+|   | RGB Off    | RGB On | RGB Eff | Reset | Soft Off | ⌘+← | ⌘+↓ | ⌘+↑ | ⌘+→ |        | Bootloader |
+|   |            |        |         |       |          |     |     |     |     |        |            |
 
 Encoder: Brightness Up / Down
 Arrow Keys: Arrow Keys

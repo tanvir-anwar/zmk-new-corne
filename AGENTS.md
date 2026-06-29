@@ -69,6 +69,11 @@ Keymap changes use a **markdown-first staging workflow**:
 
 The KEYMAP.md legend documents notation conventions (`hold/tap`, `[Sh/Caps]`, `<K1/K2>`, etc.) that map to specific ZMK behaviors. When adding new behavior types, update the legend first.
 
+## Coding Guidelines
+1. ALWAYS use conventional commits syntax to write commit messages.
+2. NEVER update keymap config unless KEYMAP.md changes are manually reviewed and confirmed.
+3. ALWAYS ask the user to manually review and validate the rendered keymap diagram, before the final commit. 
+
 ## Conventions
 
 - The board definition exists locally in `boards/arm/eyelash_corne/` **and** is referenced as a remote module in `config/west.yml` (from `github.com/a741725193/zmk-new_corne`). The local copy takes precedence.

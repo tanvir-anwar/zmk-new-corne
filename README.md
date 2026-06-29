@@ -10,31 +10,11 @@
 
 _[How I got here](https://www.reddit.com/r/ErgoMechKeyboards/comments/1t0zbf7/joining_the_club/)_
 
-## Keymap Diagram Generation (Local)
-
-Generate keymap diagrams locally to validate syntax before pushing.
-
-### One-time setup
-
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-pip install keymap-drawer
-```
-
-### Parse and draw
-
-```bash
-source .venv/bin/activate
-keymap parse -z config/eyelash_corne.keymap > keymap-drawer/eyelash_corne.yaml
-keymap -c keymap_drawer.config.yaml draw keymap-drawer/eyelash_corne.yaml > keymap-drawer/eyelash_corne.svg
-```
-
-Parsing catches syntax errors faster than a full firmware build.
-
-### Quick remapping via ZMK Studio (no build needed)
+### [DO NOT USE] Quick remapping via ZMK Studio (no build needed)
 
 For simple key binding changes, connect the left half via USB-C and open [ZMK Studio](https://zmk.studio/) in Chrome/Edge. Changes are applied live over USB — no tools or network access required.
+
+DO NOT USE this approach for this repo, since ZMK studio changes override firmware keymap, and you'll need to reset to factory settings first, and then flash compiled firmware again. 
 
 ## Firmware Build (GitHub Actions)
 
