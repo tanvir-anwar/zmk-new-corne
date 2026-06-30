@@ -69,7 +69,7 @@ Arrow Keys: Arrow Keys
 |---|------------|--------|---------|-------|----------|-----|-----|-----|-----|--------|--------|
 |   |            | Mute   |   F3    | ⌘⇧4   |          |     |     |     |     |        |        |
 |   | BT Clr All | BT 0   |         |       | USB      | ←   | ↓   | ↑   | →   | LClick | RClick |
-|   | RGB Off    | RGB On | RGB Eff | Reset | Soft Off | ⌘+← | ⌘+↓ | ⌘+↑ | ⌘+→ |        | Bootloader |
+|   | RGB Off    | RGB On | RGB Eff | Reset | Soft Off | ⌘+← | PgDn | PgUp | ⌘+→ |        | Bootloader |
 |   |            |        |         |       |          |     |     |     |     |        |            |
 
 Encoder: Brightness Up / Down
