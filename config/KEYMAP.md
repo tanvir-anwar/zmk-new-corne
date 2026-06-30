@@ -8,6 +8,10 @@ The extra key (left of 5-way switch) and 5-way switch are omitted for clarity.
 ## Design Philosophy
 
 - Modifier order Ctrl > Opt > Cmd to match other keyboards (least relearning).
+- Pinky-relief rotation: `BSPC` lives on the **left thumb** (not the weak pinky);
+  `Cmd` on the **right thumb** (also makes ⌘+C/V/Z/X cross-hand); rare `FUNC/BSLH`
+  drops to the **left-of-A pinky**. (Cmd on the right hand intentionally relaxes the
+  strict left-hand Ctrl>Opt>Cmd ordering for the high-frequency Backspace.)
 - Repurpose redundant keys: left Space → symbol-layer lock; LSHIFT → `caps` pinky.
 - Prefer hold-taps over tap-dance/mod-morph; guard pinky holds with `require-prior-idle-ms`.
 - `GLOBE` works for Globe-chords (emoji, Mission Control), not raw `Fn+key`.
@@ -38,9 +42,9 @@ The extra key (left of 5-way switch) and 5-way switch are omitted for clarity.
 | L        | L1 | L2 | L3 | L4 | L5 | R5 | R4 | R3 | R2 | R1 | R       |
 |----------|----|----|----|----|----|----|----|----|----|----|---------|
 | TAB      | Q  | W  | E  | R  | T  | Y  | U  | I  | O  | P  | MINUS   |
-| BSPC     | A  | S  | D  | F  | G  | H  | J  | K  | L  | ;  | '       |
+| FUNC/BSLH | A  | S  | D  | F  | G  | H  | J  | K  | L  | ;  | '       |
 | CTRL/ESC | Z  | X  | C  | V  | B  | N  | M  | ,  | .  | /  | SHIFT/Caps_Word |
-| | | | LALT/EQUAL | LCMD | &mo_tog L1 | Space | L2/Enter | FUNC/BSLH | | |    |
+| | | | LALT/EQUAL | BSPC | &mo_tog L1 | Space | L2/Enter | LCMD | | |    |
 
 Encoder: Volume Up / Down
 Arrow Keys: Arrow Keys
