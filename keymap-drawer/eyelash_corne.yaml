@@ -29,7 +29,7 @@ layers:
   - L
   - ;
   - ''''
-  - {t: ESC, h: LCTRL}
+  - {t: '=', h: LALT}
   - Z
   - X
   - C
@@ -42,13 +42,13 @@ layers:
   - ','
   - .
   - /
-  - {t: '&caps_word', h: LSHIFT}
-  - {t: '=', h: LALT}
-  - BSPC
+  - RSHFT
+  - DEL
+  - LCMD
   - {t: SYMBOL, h: SYMBOL}
   - SPACE
   - {t: ENTER, h: FUNC}
-  - LCMD
+  - {t: ESC, h: RCTRL}
   SYMBOL:
   - '~'
   - '!'
@@ -91,7 +91,7 @@ layers:
   - '{'
   - '}'
   - /
-  - {t: ▽, type: trans}
+  - '&caps_word'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {type: held}
@@ -105,7 +105,7 @@ layers:
   - F3
   - '&screenshot'
   - {t: ▽, type: trans}
-  - UP
+  - '&mmv MOVE_UP'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -118,9 +118,9 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - OUT USB
-  - LEFT
-  - ''
-  - RIGHT
+  - '&mmv MOVE_LEFT'
+  - '&mkp LCLK'
+  - '&mmv MOVE_RIGHT'
   - LEFT
   - DOWN
   - UP
@@ -134,12 +134,12 @@ layers:
   - '&sys_reset'
   - '&soft_off'
   - {t: ▽, type: trans}
-  - DOWN
+  - '&mmv MOVE_DOWN'
   - Gui+LEFT
   - PG DN
   - PG UP
   - Gui+RIGHT
-  - {t: ▽, type: trans}
+  - '&cmd_click'
   - '&bootloader'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}

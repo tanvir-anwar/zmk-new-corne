@@ -7,15 +7,19 @@ The extra key (left of 5-way switch) and 5-way switch are omitted for clarity.
 
 ## Design Philosophy
 
-- Modifier order Ctrl > Opt > Cmd to match other keyboards (least relearning).
-- Pinky-relief rotation: `BSPC` lives on the **left thumb** (not the weak pinky);
-  `Cmd` on the **right thumb** (also makes ⌘+C/V/Z/X cross-hand); rare `FUNC/BSLH`
-  drops to the **left-of-A pinky**. (Cmd on the right hand intentionally relaxes the
-  strict left-hand Ctrl>Opt>Cmd ordering for the high-frequency Backspace.)
-- Repurpose redundant keys: left Space → symbol-layer lock; LSHIFT → `caps` pinky.
+- Thumb-cluster mods (restore prior muscle memory): `Ctrl` on the **right thumb**
+  (hold Ctrl / tap Esc) for unix/terminal chords; `Cmd` on the **left thumb** (Mac
+  position); `Del` on the **left-thumb outer** — the logical reverse of Enter, on the
+  opposite hand, so a mishit lands on `Cmd` (harmless) rather than `Enter`.
+- Pinky relief: high-frequency `Del` and the mods live on the thumbs, not the weak
+  pinkies. `Alt` drops to the **left-of-Z pinky** as `Alt/=` (keeps the `=` tap the
+  Corne has no number row for); rare `FUNC/BSLH` sits on the **left-of-A pinky**.
+- Repurpose redundant keys: left Space → symbol-layer lock. Right pinky is a plain
+  cross-hand `Shift`; `Caps_Word` moves to the **Symbol layer** (same pinky key) to
+  avoid the base-layer hold-tap misfiring Caps Word during shift-rolls.
 - Prefer hold-taps over tap-dance/mod-morph; guard pinky holds with `require-prior-idle-ms`.
 - `GLOBE` works for Globe-chords (emoji, Mission Control), not raw `Fn+key`.
-- Single Shift (right pinky) — revisit if same-hand shifting feels awkward.
+- Single Shift (right pinky, plain `&kp`) — revisit if same-hand shifting feels awkward.
 - L1 thumb on Layer 1 must stay transparent (it unlocks the toggled Symbol layer).
 
 ## Legend
@@ -31,6 +35,7 @@ The extra key (left of 5-way switch) and 5-way switch are omitted for clarity.
 | L2/Enter | Hold for Layer 2 (Function), tap for Enter |
 | ⌘+key | Modified keycode — sends Cmd+key (not a macro) |
 | ⌘⇧4 | Screenshot macro — sends Cmd+Shift+4 |
+| ⌘+Click | Macro — holds Cmd while left-clicking (open link in new tab, multi-select) |
 
 ### ZMK Reference
 1. Keycodes: https://zmk.dev/docs/keymaps/list-of-keycodes
@@ -43,8 +48,8 @@ The extra key (left of 5-way switch) and 5-way switch are omitted for clarity.
 |----------|----|----|----|----|----|----|----|----|----|----|---------|
 | TAB      | Q  | W  | E  | R  | T  | Y  | U  | I  | O  | P  | MINUS   |
 | FUNC/BSLH | A  | S  | D  | F  | G  | H  | J  | K  | L  | ;  | '       |
-| CTRL/ESC | Z  | X  | C  | V  | B  | N  | M  | ,  | .  | /  | SHIFT/Caps_Word |
-| | | | LALT/EQUAL | BSPC | &mo_tog L1 | Space | L2/Enter | LCMD | | |    |
+| ALT/EQUAL | Z  | X  | C  | V  | B  | N  | M  | ,  | .  | /  | SHIFT   |
+| | | | DEL | LCMD | &mo_tog L1 | Space | L2/Enter | CTRL/ESC | | |    |
 
 Encoder: Volume Up / Down
 Arrow Keys: Arrow Keys
@@ -53,9 +58,9 @@ Arrow Keys: Arrow Keys
 
 | L      | L1 | L2 | L3 | L4 | L5 | R5 | R4 | R3 | R2 | R1  | R |
 |--------|----|----|----|----|----|----|----|----|----|-----|---|
-| ~      | !  | @  | #  | $  | %  | ^  | &  | *  | (  | )   |   |
-| GRAVE  | 1  | 2  | 3  | 4  | 5  | 6  | 7  | 8  | 9  | 0   |   |
-|     | BSLH  | PIPE | _ | ~  | =  | [  | ]  | {  | }  | /  |   |
+| ~      | !  | @  | #  | $  | %  | ^  | &  | *  | (  | )   |          |
+| GRAVE  | 1  | 2  | 3  | 4  | 5  | 6  | 7  | 8  | 9  | 0   |          |
+|     | BSLH  | PIPE | _ | ~  | =  | [  | ]  | {  | }  | /  | Caps_Word |
 |        |    |      |   |    |    |    |    |    |    |    |   |
 
 Encoder: Scroll Down / Up
@@ -73,11 +78,11 @@ Arrow Keys: Arrow Keys
 |---|------------|--------|---------|-------|----------|-----|-----|-----|-----|--------|--------|
 |   |            | Mute   |   F3    | ⌘⇧4   |          |     |     |     |     |        |        |
 |   | BT Clr All | BT 0   |         |       | USB      | ←   | ↓   | ↑   | →   | LClick | RClick |
-|   | RGB Off    | RGB On | RGB Eff | Reset | Soft Off | ⌘+← | PgDn | PgUp | ⌘+→ |        | Bootloader |
+|   | RGB Off    | RGB On | RGB Eff | Reset | Soft Off | ⌘+← | PgDn | PgUp | ⌘+→ | ⌘+Click | Bootloader |
 |   |            |        |         |       |          |     |     |     |     |        |            |
 
 Encoder: Brightness Up / Down
-Arrow Keys: Arrow Keys
+Joystick: Mouse cursor (center-press = Left Click)
 
 ## Combos
 
