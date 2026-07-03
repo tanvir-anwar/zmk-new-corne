@@ -44,9 +44,8 @@
             compatible = "zmk,behavior-hold-tap";
             display-name = "Shift/Caps Word Hold Tap";
             #binding-cells = <2>;
-            flavor = "tap-preferred";
+            flavor = "balanced";
             tapping-term-ms = <150>;
-            require-prior-idle-ms = <125>;
             bindings = <&kp>, <&caps_word>;
         };
 
@@ -56,6 +55,7 @@
             #binding-cells = <2>;
             flavor = "balanced";
             tapping-term-ms = <150>;
+            require-prior-idle-ms = <150>;
             bindings = <&mo>, <&tog>;
         };
     };
