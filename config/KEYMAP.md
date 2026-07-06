@@ -9,9 +9,9 @@ The extra key (left of 5-way switch) and 5-way switch are omitted for clarity.
 
 - Thumb-cluster mods (restore prior muscle memory): `Ctrl` on the **right thumb**
   (hold Ctrl / tap Esc) for unix/terminal chords; `Cmd` on the **left thumb** (Mac
-  position); `Del` on the **left-thumb outer** — the logical reverse of Enter, on the
+  position); `Bksp` on the **left-thumb outer** — the logical reverse of Enter, on the
   opposite hand, so a mishit lands on `Cmd` (harmless) rather than `Enter`.
-- Pinky relief: high-frequency `Del` and the mods live on the thumbs, not the weak
+- Pinky relief: high-frequency `Bksp` and the mods live on the thumbs, not the weak
   pinkies. `Alt` drops to the **left-of-Z pinky** as `Alt/=` (keeps the `=` tap the
   Corne has no number row for); rare `FUNC/BSLH` sits on the **left-of-A pinky**.
 - Repurpose redundant keys: left Space → symbol-layer lock. Right pinky is a plain
@@ -49,7 +49,7 @@ The extra key (left of 5-way switch) and 5-way switch are omitted for clarity.
 | TAB      | Q  | W  | E  | R  | T  | Y  | U  | I  | O  | P  | MINUS   |
 | FUNC/BSLH | A  | S  | D  | F  | G  | H  | J  | K  | L  | ;  | '       |
 | ALT/EQUAL | Z  | X  | C  | V  | B  | N  | M  | ,  | .  | /  | SHIFT   |
-| | | | DEL | LCMD | &mo_tog L1 | Space | L2/Enter | CTRL/ESC | | |    |
+| | | | BSPC | LCMD | &mo_tog L1 | Space | L2/Enter | CTRL/ESC | | |    |
 
 Encoder: Volume Up / Down
 Arrow Keys: Arrow Keys
