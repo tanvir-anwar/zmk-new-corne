@@ -7,6 +7,13 @@ The extra key (left of 5-way switch) and 5-way switch are omitted for clarity.
 
 ## Design Philosophy
 
+- **Traditional placement:** where possible, a key sits as close to its position on a
+  traditional QWERTY keyboard as the layout allows (e.g. `` ` ``/`~` in the top-left
+  corner, brackets on the right). This keeps existing muscle memory intact.
+- **At most a 2-key chord for every symbol:** every symbol is reachable in ≤2 keys —
+  a single base-layer tap, or one modifier held with one key (`Shift`, `L1`/Symbol, or
+  `L2`/Function). No 3-key symbol chords. When a symbol leaves its dedicated key it
+  must still satisfy this (e.g. `~` = `Shift`+`` ` ``, `_` = `Shift`+`-`).
 - Thumb-cluster mods (restore prior muscle memory): `Ctrl` on the **right thumb**
   (hold Ctrl / tap Esc) for unix/terminal chords; `Cmd` on the **left thumb** (Mac
   position); `Bksp` on the **left-thumb outer** — the logical reverse of Enter, on the
@@ -58,10 +65,10 @@ Arrow Keys: Arrow Keys
 
 | L      | L1 | L2 | L3 | L4 | L5 | R5 | R4 | R3 | R2 | R1  | R |
 |--------|----|----|----|----|----|----|----|----|----|-----|---|
-| ~      | !  | @  | #  | $  | %  | ^  | &  | *  | (  | )   |          |
-| GRAVE  | 1  | 2  | 3  | 4  | 5  | 6  | 7  | 8  | 9  | 0   |          |
-|     | BSLH  | PIPE | _ | ~  | =  | [  | ]  | {  | }  | /  | Caps_Word |
-|        |    |      |   |    |    |    |    |    |    |    |   |
+| GRAVE  | !  | @  | #  | $  | %  | ^  | &  | *  | (  | )   |          |
+|        | 1  | 2  | 3  | 4  | 5  | 6  | 7  | 8  | 9  | 0   |          |
+|        |    |    |    |    |    | [  | ]  | {  | }  | /  | Caps_Word |
+|        |    |    |    |    |    |    |    |    |    |    |   |
 
 Encoder: Scroll Down / Up
 Arrow Keys: Arrow Keys
@@ -76,8 +83,8 @@ Arrow Keys: Arrow Keys
 
 | L | L1         | L2     | L       | L4    | L5       | R5  | R4  | R3  | R2  | R1     | R      |
 |---|------------|--------|---------|-------|----------|-----|-----|-----|-----|--------|--------|
-|   |            | Mute   |   F3    | ⌘⇧4   |          |     |     |     |     |        |        |
-|   | BT Clr All | BT 0   |         |       | USB      | ←   | ↓   | ↑   | →   | LClick | RClick |
+| ~ |            | Mute   |   F3    | ⌘⇧4   |          |     |     |     |     |        |        |
+| BT Clr All | BT 0 | BT 1 |        |       | USB      | ←   | ↓   | ↑   | →   | LClick | RClick |
 |   | RGB Off    | RGB On | RGB Eff | Reset | Soft Off | ⌘+← | PgDn | PgUp | ⌘+→ | ⌘+Click | Bootloader |
 |   |            |        |         |       |          |     |     |     |     |        |            |
 

@@ -50,7 +50,7 @@ layers:
   - {t: ENTER, h: FUNC}
   - {t: ESC, h: RCTRL}
   SYMBOL:
-  - '~'
+  - '`'
   - '!'
   - '@'
   - '#'
@@ -63,7 +63,7 @@ layers:
   - (
   - )
   - {t: ▽, type: trans}
-  - '`'
+  - {t: ▽, type: trans}
   - '1'
   - '2'
   - '3'
@@ -79,11 +79,11 @@ layers:
   - '0'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - \
-  - '|'
-  - _
-  - '~'
-  - '='
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - DOWN
   - '['
@@ -99,7 +99,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   FUNC:
-  - {t: ▽, type: trans}
+  - '~'
   - {t: ▽, type: trans}
   - MUTE
   - F3
@@ -112,9 +112,9 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - BT CLR ALL
   - {t: BT, h: '0'}
+  - {t: BT, h: '1'}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - OUT USB
