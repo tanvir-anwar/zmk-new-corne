@@ -81,11 +81,11 @@ Arrow Keys: Arrow Keys
 
 ## Layer 2: FUNCTION (hold L2)
 
-| L | L1         | L2     | L       | L4    | L5       | R5  | R4  | R3  | R2  | R1     | R      |
-|---|------------|--------|---------|-------|----------|-----|-----|-----|-----|--------|--------|
-| ~ |            | Mute   |   F3    | ⌘⇧4   |          |     |     |     |     |        |        |
-| BT Clr All | BT 0 | BT 1 |        |       | USB      | ←   | ↓   | ↑   | →   | LClick | RClick |
-|   | RGB Off    | RGB On | RGB Eff | Reset | Soft Off | ⌘+← | PgDn | PgUp | ⌘+→ | ⌘+Click | Bootloader |
+| L | L1         | L2     | L       | L4    | L5       | R5  | R4  | R3  | R2  | R1     | R          |
+|---|------------|--------|---------|-------|----------|-----|-----|-----|-----|--------|------------|
+| ~ |            | Mute   |   F3    | ⌘⇧4   |          |     |     |     |     |        | Bootloader |
+| BT Clr All | BT 0 | BT 1 |        |       | USB      | ←   | ↓   | ↑   | →   | LClick | RClick     |
+|   | RGB Off    | RGB On | RGB Eff | Reset | Soft Off | ⌘+← | PgDn | PgUp | ⌘+→ | ⌘+Click |         |
 |   |            |        |         |       |          |     |     |     |     |        |            |
 
 Encoder: Brightness Up / Down
