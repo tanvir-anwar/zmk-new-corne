@@ -93,7 +93,7 @@ layers:
   - /
   - '&caps_word'
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - Gui+LSHFT
   - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}

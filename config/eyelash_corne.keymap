@@ -118,7 +118,7 @@
 &kp GRAVE   &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT                            &kp UP                        &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &trans
 &trans      &kp N1    &kp N2  &kp N3    &kp N4    &kp N5               &kp LEFT         &none         &kp RIGHT       &kp N6     &kp N7     &kp N8     &kp N9    &kp N0    &trans
 &trans      &trans    &trans  &trans    &trans    &trans    &trans                     &kp DOWN                      &kp LBKT   &kp RBKT   &kp LBRC   &kp RBRC  &kp FSLH  &caps_word
-                              &trans    &trans    &trans                                                               &trans     &trans     &trans
+                              &trans    &kp LG(LSHFT)  &trans                                                          &trans     &trans     &trans
             >;
 
             sensor-bindings = <&scroll_encoder>;
