@@ -28,6 +28,8 @@ The extra key (left of 5-way switch) and 5-way switch are omitted for clarity.
 - `GLOBE` works for Globe-chords (emoji, Mission Control), not raw `Fn+key`.
 - Single Shift (right pinky, plain `&kp`) — revisit if same-hand shifting feels awkward.
 - L1 thumb on Layer 1 must stay transparent (it unlocks the toggled Symbol layer).
+- Colemak-DH is a gradual transition toward a 36-key workflow: preserve familiar
+  number ordering and mnemonic controls while using bilateral access to keep Layer 4 comfortable.
 
 ## Legend
 
@@ -37,7 +39,7 @@ The extra key (left of 5-way switch) and 5-way switch are omitted for clarity.
 | _(none)_ | No action |
 | hold/tap | Hold for first action, tap for second |
 | SHIFT/Caps_Word | Hold-tap — hold for Shift, tap for Caps Word |
-| &mo_tog L1 | Hold-tap — hold for momentary Layer 1, tap to toggle Layer 1 on/off (sticky) |
+| &mo_tog Ln | Hold-tap — hold for momentary Layer n, tap to toggle Layer n on/off (sticky) |
 | FUNC/BSLH | Hold for macOS Fn/Globe key, tap for Backslash |
 | L2/Enter | Hold for Layer 2 (Function), tap for Enter |
 | ⌘+key | Modified keycode — sends Cmd+key (not a macro) |
@@ -66,9 +68,9 @@ Arrow Keys: Arrow Keys
 | L      | L1 | L2 | L3 | L4 | L5 | R5 | R4 | R3 | R2 | R1 | R  |
 |--------|----|----|----|----|----|----|----|----|----|----|----|
 | GRAVE  | !  | @  | #  | $  | %  | ^  | &  | *  | (  | )  |    |
-|        | 1  | 2  | 3  | 4  | 5  | 6  | 7  | 8  | 9  | 0       |
-|        |    |    |    |    |    | [  | ]  | {  | }  | /  | Caps_Word |
-|    |  |    |    | LCMD+SHIFT |  |    |    |    |    |    |   |
+|        | 1  | 2  | 3  | 4  | 5  | 6  | 7  | 8  | 9  | 0  |    |
+|        |    |    |    |    |    | [  | ]  |    |    |    |    |
+|        |    |    |    |    |    |    |    |    |    |    |    |
 
 Encoder: Scroll Down / Up
 Arrow Keys: Arrow Keys
@@ -83,16 +85,48 @@ Arrow Keys: Arrow Keys
 
 | L | L1         | L2     | L       | L4    | L5       | R5  | R4  | R3  | R2  | R1     | R          |
 |---|------------|--------|---------|-------|----------|-----|-----|-----|-----|--------|------------|
-| ~ |            | Mute   |   F3    | ⌘⇧4   |          |     |     |     |     |        | Bootloader |
-| BT Clr All | BT 0 | BT 1 |        |       | USB      | ←   | ↓   | ↑   | →   | LClick | RClick     |
+| ~ | TAB        | Mute   |   F3    | ⌘⇧4   |          |     |     |     |     |        | Bootloader |
+| BT Clr All | ESC | BT 0 | BT 1    | BT 2  | USB      | ←   | ↓   | ↑   | →   | LClick | RClick     |
 |   | RGB Off    | RGB On | RGB Eff | Reset | Soft Off | ⌘+← | PgDn | PgUp | ⌘+→ | ⌘+Click |         |
 |   |            |        |         |       |          |     |     |     |     |        |            |
 
 Encoder: Brightness Up / Down
 Joystick: Mouse cursor (center-press = Left Click)
 
+## Layer 3: Colemak-DH
+
+From QWERTY, press the left layer thumb and Space together to switch to
+Colemak-DH. Press the same physical chord again to return to QWERTY.
+
+The two outer columns remain transparent as temporary training aids while
+transitioning toward a 36-key layout.
+
+| L        | L1 | L2 | L3 | L4 | L5 | R5 | R4 | R3 | R2 | R1 | R  |
+|----------|----|----|----|----|----|----|----|----|----|----|----|
+|          | Q  | W  | F  | P  | B  | J  | L  | U  | Y  | '  |    |
+|          | A  | R  | S  | T  | G  | M  | N  | E  | I  | O  |    |
+|          | SHIFT/Z  | CTRL/X | ALT/C | D  | V  | K  | H  | ALT/,  | CTRL/.  | SHIFT/FSLH |  |
+| | | | BSPC | CMD/TAB | &mo_tog L4 | Space | L4/Enter | CTRL/ESC | | |    |
+
+## Layer 4: Symbol-DH
+
+From Colemak-DH, hold the left layer thumb for momentary access or tap it to
+toggle Symbol-DH on/off. The right `L4/Enter` thumb provides a second momentary
+access path, keeping left-hand numbers and symbols comfortable to reach.
+
+As on Colemak-DH, the two outer columns remain transparent during the
+transition to 36 keys.
+
+| L | L1 | L2 | L3 | L4 | L5 | R5 | R4 | R3 | R2 | R1 | R  |
+|---|----|----|----|----|----|----|----|----|----|----|----|
+|   | 1  | 2  | 3  | 4  | 5  | 6  | 7  | 8  | 9  | 0  |    |
+|   | `  |  ~ | -  | =  | GLOBE | ←  | ↓  | ↑  | →  | ;  |    |
+|   | SHIFT/BSLH  | : | Caps Word | [ | ] |  PgDn |  PgUp | ,  | .  | SHIFT/FSLH |    |
+|   |    |    | BSPC | CMD/TAB |  | Space | Enter | CTRL/ESC |    |    |    |
+
 ## Combos
 
-| Keys                 | Action                |
-|----------------------|-----------------------|
-| Q + S + Z (hold 2s)  | Soft off (deep sleep) |
+| Keys                        | Action                                      |
+|-----------------------------|---------------------------------------------|
+| Q + S + Z (hold 2s)         | Soft off (deep sleep)                       |
+| Left layer thumb + Space    | QWERTY ↔ Colemak-DH                         |

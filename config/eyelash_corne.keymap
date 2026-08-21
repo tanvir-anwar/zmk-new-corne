@@ -95,6 +95,18 @@
             bindings = <&soft_off>;
             key-positions = <1 15 29>;
         };
+
+        to_colemak {
+            bindings = <&to 3>;
+            key-positions = <44 45>;
+            layers = <0>;
+        };
+
+        to_qwerty {
+            bindings = <&to 0>;
+            key-positions = <44 45>;
+            layers = <3>;
+        };
     };
 
     keymap {
@@ -117,8 +129,8 @@
             bindings = <
 &kp GRAVE   &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT                            &kp UP                        &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &trans
 &trans      &kp N1    &kp N2  &kp N3    &kp N4    &kp N5               &kp LEFT         &none         &kp RIGHT       &kp N6     &kp N7     &kp N8     &kp N9    &kp N0    &trans
-&trans      &trans    &trans  &trans    &trans    &trans    &trans                     &kp DOWN                      &kp LBKT   &kp RBKT   &kp LBRC   &kp RBRC  &kp FSLH  &caps_word
-                              &trans    &kp LG(LSHFT)  &trans                                                          &trans     &trans     &trans
+&trans      &trans    &trans  &trans    &trans    &trans    &trans                     &kp DOWN                      &kp LBKT   &kp RBKT   &trans     &trans     &trans     &trans
+                              &trans    &trans     &trans                                                           &trans     &trans     &trans
             >;
 
             sensor-bindings = <&scroll_encoder>;
@@ -127,10 +139,34 @@
         function_layer {
             display-name = "FUNC";
             bindings = <
-&kp TILDE  &trans       &kp C_MUTE      &kp F3         &screenshot  &trans                                    &mmv MOVE_UP                  &trans          &trans         &trans         &trans         &trans     &bootloader
-&bt BT_CLR_ALL  &bt BT_SEL 0  &bt BT_SEL 1  &trans     &trans       &out OUT_USB            &mmv MOVE_LEFT  &mkp LCLK      &mmv MOVE_RIGHT &kp LEFT        &kp DOWN       &kp UP         &kp RIGHT      &mkp LCLK  &mkp RCLK
+&kp TILDE  &kp TAB       &kp C_MUTE      &kp F3         &screenshot  &trans                                    &mmv MOVE_UP                  &trans          &trans         &trans         &trans         &trans     &bootloader
+&bt BT_CLR_ALL  &kp ESC  &bt BT_SEL 0    &bt BT_SEL 1   &bt BT_SEL 2 &out OUT_USB            &mmv MOVE_LEFT  &mkp LCLK      &mmv MOVE_RIGHT &kp LEFT        &kp DOWN       &kp UP         &kp RIGHT      &mkp LCLK  &mkp RCLK
 &trans  &rgb_ug RGB_OFF &rgb_ug RGB_ON  &rgb_ug RGB_EFF &sys_reset   &soft_off  &trans                       &mmv MOVE_DOWN                &kp LG(LEFT)    &kp PG_DN      &kp PG_UP      &kp LG(RIGHT)  &cmd_click &trans
                                         &trans          &trans       &trans                                                                 &trans          &trans         &trans
+            >;
+
+            sensor-bindings = <&brightness_encoder>;
+        };
+
+        colemak_layer {
+            display-name = "COLEMAK-DH";
+            bindings = <
+&trans             &kp Q          &kp W        &kp F       &kp P  &kp B                             &kp UP               &kp J      &kp L          &kp U        &kp Y        &kp SQT         &trans
+&trans             &kp A          &kp R        &kp S       &kp T  &kp G                  &kp LEFT    &none    &kp RIGHT  &kp M      &kp N          &kp E        &kp I        &kp O           &trans
+&trans             &ht LSHIFT Z   &ht LCTRL X  &ht LALT C  &kp D  &kp V  &kp SPACE                  &kp DOWN             &kp K      &kp H          &ht RALT COMMA  &ht RCTRL DOT  &ht RSHIFT FSLH  &trans
+                                                &kp BSPC    &ht LCMD TAB  &mo_tog 4 4                                      &kp SPACE  &lt 4 ENTER  &ht RCTRL ESC
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
+        };
+
+        symbol_dh_layer {
+            display-name = "SYMBOL-DH";
+            bindings = <
+&trans             &kp N1          &kp N2     &kp N3       &kp N4    &kp N5                            &mmv MOVE_UP                  &kp N6      &kp N7      &kp N8        &kp N9       &kp N0          &trans
+&trans             &kp GRAVE       &kp TILDE  &kp MINUS    &kp EQUAL &kp GLOBE             &mmv MOVE_LEFT  &mkp LCLK  &mmv MOVE_RIGHT  &kp LEFT    &kp DOWN    &kp UP        &kp RIGHT    &kp SEMI        &trans
+&trans             &ht LSHIFT BSLH &kp COLON  &caps_word   &kp LBKT  &kp RBKT  &trans                   &mmv MOVE_DOWN                &kp PG_DN   &kp PG_UP   &kp COMMA     &kp DOT      &ht RSHIFT FSLH &trans
+                                                   &kp BSPC  &ht LCMD TAB  &trans                                                       &kp SPACE   &kp ENTER   &ht RCTRL ESC
             >;
 
             sensor-bindings = <&brightness_encoder>;

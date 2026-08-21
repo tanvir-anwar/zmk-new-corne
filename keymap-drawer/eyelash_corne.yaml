@@ -88,19 +88,19 @@ layers:
   - DOWN
   - '['
   - ']'
-  - '{'
-  - '}'
-  - /
-  - '&caps_word'
   - {t: ▽, type: trans}
-  - Gui+LSHFT
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   FUNC:
   - '~'
-  - {t: ▽, type: trans}
+  - TAB
   - MUTE
   - F3
   - '&screenshot'
@@ -113,10 +113,10 @@ layers:
   - {t: ▽, type: trans}
   - '&bootloader'
   - BT CLR ALL
+  - ESC
   - {t: BT, h: '0'}
   - {t: BT, h: '1'}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {t: BT, h: '2'}
   - OUT USB
   - '&mmv MOVE_LEFT'
   - '&mkp LCLK'
@@ -147,6 +147,110 @@ layers:
   - {t: ▽, type: trans}
   - {type: held}
   - {t: ▽, type: trans}
+  COLEMAK-DH:
+  - {t: ▽, type: trans}
+  - Q
+  - W
+  - F
+  - P
+  - B
+  - UP
+  - J
+  - L
+  - U
+  - Y
+  - ''''
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - A
+  - R
+  - S
+  - T
+  - G
+  - LEFT
+  - ''
+  - RIGHT
+  - M
+  - N
+  - E
+  - I
+  - O
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: Z, h: LSHIFT}
+  - {t: X, h: LCTRL}
+  - {t: C, h: LALT}
+  - D
+  - V
+  - SPACE
+  - DOWN
+  - K
+  - H
+  - {t: ',', h: RALT}
+  - {t: ., h: RCTRL}
+  - {t: /, h: RSHIFT}
+  - {t: ▽, type: trans}
+  - BSPC
+  - {t: TAB, h: LCMD}
+  - {t: SYMBOL-DH, h: SYMBOL-DH}
+  - SPACE
+  - {t: ENTER, h: SYMBOL-DH}
+  - {t: ESC, h: RCTRL}
+  SYMBOL-DH:
+  - {t: ▽, type: trans}
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+  - '&mmv MOVE_UP'
+  - '6'
+  - '7'
+  - '8'
+  - '9'
+  - '0'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '`'
+  - '~'
+  - '-'
+  - '='
+  - GLOBE
+  - '&mmv MOVE_LEFT'
+  - '&mkp LCLK'
+  - '&mmv MOVE_RIGHT'
+  - LEFT
+  - DOWN
+  - UP
+  - RIGHT
+  - ;
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: \, h: LSHIFT}
+  - ':'
+  - '&caps_word'
+  - '['
+  - ']'
+  - {t: ▽, type: trans}
+  - '&mmv MOVE_DOWN'
+  - PG DN
+  - PG UP
+  - ','
+  - .
+  - {t: /, h: RSHIFT}
+  - {t: ▽, type: trans}
+  - BSPC
+  - {t: TAB, h: LCMD}
+  - {type: held}
+  - SPACE
+  - ENTER
+  - {t: ESC, h: RCTRL}
 combos:
 - p: [1, 15, 29]
   k: '&soft_off'
+- p: [44, 45]
+  k: {t: COLEMAK-DH, h: toggle}
+  l: [QWERTY]
+- p: [44, 45]
+  k: {t: QWERTY, h: toggle}
+  l: [COLEMAK-DH]
