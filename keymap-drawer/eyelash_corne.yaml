@@ -147,7 +147,7 @@ layers:
   - {t: ▽, type: trans}
   - {type: held}
   - {t: ▽, type: trans}
-  COLEMAK-DH:
+  COLEMK:
   - {t: ▽, type: trans}
   - Q
   - W
@@ -159,7 +159,7 @@ layers:
   - L
   - U
   - Y
-  - ''''
+  - ;
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - A
@@ -177,26 +177,26 @@ layers:
   - O
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: Z, h: LSHIFT}
-  - {t: X, h: LCTRL}
-  - {t: C, h: LALT}
+  - Z
+  - X
+  - C
   - D
   - V
   - SPACE
   - DOWN
   - K
   - H
-  - {t: ',', h: RALT}
-  - {t: ., h: RCTRL}
+  - {t: ',', h: RALT, s: SYM-DH}
+  - .
   - {t: /, h: RSHIFT}
   - {t: ▽, type: trans}
   - BSPC
-  - {t: TAB, h: LCMD}
-  - {t: SYMBOL-DH, h: SYMBOL-DH}
+  - {t: LCMD, h: sticky}
+  - {t: LSHIFT, h: sticky}
   - SPACE
-  - {t: ENTER, h: SYMBOL-DH}
-  - {t: ESC, h: RCTRL}
-  SYMBOL-DH:
+  - {t: ENTER, h: SYM-DH}
+  - {t: '-', h: RCTRL}
+  SYM-DH:
   - {t: ▽, type: trans}
   - '1'
   - '2'
@@ -212,9 +212,9 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - '`'
-  - '~'
-  - '-'
-  - '='
+  - \
+  - '['
+  - ']'
   - GLOBE
   - '&mmv MOVE_LEFT'
   - '&mkp LCLK'
@@ -223,34 +223,34 @@ layers:
   - DOWN
   - UP
   - RIGHT
-  - ;
+  - ''''
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: \, h: LSHIFT}
-  - ':'
+  - TAB
+  - '&screenshot'
   - '&caps_word'
-  - '['
-  - ']'
+  - {t: LALT, h: sticky}
+  - ESC
   - {t: ▽, type: trans}
   - '&mmv MOVE_DOWN'
   - PG DN
   - PG UP
-  - ','
-  - .
-  - {t: /, h: RSHIFT}
+  - {t: ',', s: SYM-DH}
+  - '='
+  - RSHFT
   - {t: ▽, type: trans}
   - BSPC
-  - {t: TAB, h: LCMD}
-  - {type: held}
+  - {t: LCMD, h: sticky}
+  - {t: LSHIFT, h: sticky}
   - SPACE
-  - ENTER
-  - {t: ESC, h: RCTRL}
+  - {t: ENTER, h: SYM-DH, type: held}
+  - {t: '-', h: RCTRL}
 combos:
 - p: [1, 15, 29]
   k: '&soft_off'
 - p: [44, 45]
-  k: {t: COLEMAK-DH, h: toggle}
+  k: {t: COLEMK, h: toggle}
   l: [QWERTY]
 - p: [44, 45]
   k: {t: QWERTY, h: toggle}
-  l: [COLEMAK-DH]
+  l: [COLEMK]

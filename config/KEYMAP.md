@@ -10,26 +10,26 @@ The extra key (left of 5-way switch) and 5-way switch are omitted for clarity.
 - **Traditional placement:** where possible, a key sits as close to its position on a
   traditional QWERTY keyboard as the layout allows (e.g. `` ` ``/`~` in the top-left
   corner, brackets on the right). This keeps existing muscle memory intact.
-- **At most a 2-key chord for every symbol:** every symbol is reachable in ≤2 keys —
-  a single base-layer tap, or one modifier held with one key (`Shift`, `L1`/Symbol, or
-  `L2`/Function). No 3-key symbol chords. When a symbol leaves its dedicated key it
-  must still satisfy this (e.g. `~` = `Shift`+`` ` ``, `_` = `Shift`+`-`).
-- Thumb-cluster mods (restore prior muscle memory): `Ctrl` on the **right thumb**
-  (hold Ctrl / tap Esc) for unix/terminal chords; `Cmd` on the **left thumb** (Mac
-  position); `Bksp` on the **left-thumb outer** — the logical reverse of Enter, on the
-  opposite hand, so a mishit lands on `Cmd` (harmless) rather than `Enter`.
-- Pinky relief: high-frequency `Bksp` and the mods live on the thumbs, not the weak
-  pinkies. `Alt` drops to the **left-of-Z pinky** as `Alt/=` (keeps the `=` tap the
-  Corne has no number row for); rare `FUNC/BSLH` sits on the **left-of-A pinky**.
-- Repurpose redundant keys: left Space → symbol-layer lock. Right pinky is a plain
-  cross-hand `Shift`; `Caps_Word` moves to the **Symbol layer** (same pinky key) to
-  avoid the base-layer hold-tap misfiring Caps Word during shift-rolls.
-- Prefer hold-taps over tap-dance/mod-morph; guard pinky holds with `require-prior-idle-ms`.
+- **At most two simultaneous keys for every symbol:** symbols use either a direct key,
+  a layer chord, or a sticky modifier followed by a layer chord. Sticky modifiers avoid
+  three-finger chords while preserving familiar shifted-number relationships.
+- Thumb-cluster mods: sticky `Cmd` and `Shift` live on the left thumbs. The right outer
+  thumb holds `Ctrl` or taps `Minus`, keeping both actions available without loading an
+  alpha key. `Bksp`, `Space`, and `L4/Enter` retain dedicated thumb positions.
+- Pinky relief: high-frequency editing and primary modifiers live on the thumbs.
+  `Alt` remains available from `ALT/,` and as a sticky modifier on Layer 4; the right
+  pinky retains `SHIFT/FSLH`.
+- Identifier-friendly punctuation: `Semicolon` is on the Colemak base layer, `Minus`
+  is on the right thumb, and Caps Word continues through `Minus`.
+- Avoid tap dance and printable-key combos for routine character entry. Reserve
+  combos for infrequent system or layout actions, and do not put timing ambiguity
+  on plain alpha keys.
 - `GLOBE` works for Globe-chords (emoji, Mission Control), not raw `Fn+key`.
-- Single Shift (right pinky, plain `&kp`) — revisit if same-hand shifting feels awkward.
+- Sticky `Shift` can be tapped before Layer 4 or while Layer 4 is held, then applies to
+  the next number, bracket, or punctuation key.
 - L1 thumb on Layer 1 must stay transparent (it unlocks the toggled Symbol layer).
 - Colemak-DH is a gradual transition toward a 36-key workflow: preserve familiar
-  number ordering and mnemonic controls while using bilateral access to keep Layer 4 comfortable.
+  number ordering and mnemonic controls while keeping symbols and navigation accessible.
 
 ## Legend
 
@@ -38,10 +38,13 @@ The extra key (left of 5-way switch) and 5-way switch are omitted for clarity.
 | _(blank)_ | Transparent — falls through to the layer below |
 | _(none)_ | No action |
 | hold/tap | Hold for first action, tap for second |
-| SHIFT/Caps_Word | Hold-tap — hold for Shift, tap for Caps Word |
 | &mo_tog Ln | Hold-tap — hold for momentary Layer n, tap to toggle Layer n on/off (sticky) |
+| &sk MOD | Sticky modifier — tap for one-shot use, or hold as a normal modifier |
+| [Ctrl→L4] | Mod-morph — while Ctrl is active, toggle Layer 4 instead of the normal key action |
+| CTRL/MINUS | Hold for Ctrl, tap for Minus |
 | FUNC/BSLH | Hold for macOS Fn/Globe key, tap for Backslash |
 | L2/Enter | Hold for Layer 2 (Function), tap for Enter |
+| L4/Enter | Hold for Layer 4 (Symbol-DH), tap for Enter |
 | ⌘+key | Modified keycode — sends Cmd+key (not a macro) |
 | ⌘⇧4 | Screenshot macro — sends Cmd+Shift+4 |
 | ⌘+Click | Macro — holds Cmd while left-clicking (open link in new tab, multi-select) |
@@ -50,6 +53,7 @@ The extra key (left of 5-way switch) and 5-way switch are omitted for clarity.
 1. Keycodes: https://zmk.dev/docs/keymaps/list-of-keycodes
 2. Mod Morph: https://zmk.dev/docs/keymaps/behaviors/mod-morph
 3. Hold Tap: https://zmk.dev/docs/keymaps/behaviors/hold-tap
+4. Sticky Key: https://zmk.dev/docs/keymaps/behaviors/sticky-key
 
 ## Layer 0: QWERTY (default)
 
@@ -95,24 +99,35 @@ Joystick: Mouse cursor (center-press = Left Click)
 
 ## Layer 3: Colemak-DH
 
-From QWERTY, press the left layer thumb and Space together to switch to
-Colemak-DH. Press the same physical chord again to return to QWERTY.
+From QWERTY, press the physical left outer thumb key and the Space key
+together to switch to Colemak-DH. Press the same physical chord again to
+return to QWERTY.
 
 The two outer columns remain transparent as temporary training aids while
 transitioning toward a 36-key layout.
 
+Hold the `CTRL/MINUS` thumb and tap the comma key to toggle Layer 4. The
+same chord toggles Layer 4 off.
+
 | L        | L1 | L2 | L3 | L4 | L5 | R5 | R4 | R3 | R2 | R1 | R  |
 |----------|----|----|----|----|----|----|----|----|----|----|----|
-|          | Q  | W  | F  | P  | B  | J  | L  | U  | Y  | '  |    |
+|          | Q  | W  | F  | P  | B  | J  | L  | U  | Y  | ;  |    |
 |          | A  | R  | S  | T  | G  | M  | N  | E  | I  | O  |    |
-|          | SHIFT/Z  | CTRL/X | ALT/C | D  | V  | K  | H  | ALT/,  | CTRL/.  | SHIFT/FSLH |  |
-| | | | BSPC | CMD/TAB | &mo_tog L4 | Space | L4/Enter | CTRL/ESC | | |    |
+|          | Z  | X  | C  | D  | V  | K  | H  | ALT/, [Ctrl→L4] | . | SHIFT/FSLH |  |
+| | | | BSPC | &sk CMD | &sk SHIFT | Space | L4/Enter | CTRL/MINUS | | | |
 
 ## Layer 4: Symbol-DH
 
-From Colemak-DH, hold the left layer thumb for momentary access or tap it to
-toggle Symbol-DH on/off. The right `L4/Enter` thumb provides a second momentary
-access path, keeping left-hand numbers and symbols comfortable to reach.
+From Colemak-DH, hold the right `L4/Enter` thumb for momentary access. Hold the
+`CTRL/MINUS` thumb and tap the comma key to toggle Symbol-DH on or off.
+
+Sticky `Shift` remains active through the Layer 4 binding. Tap sticky `Shift`,
+then hold `L4/Enter` and press a number or bracket to produce its shifted symbol
+without a three-finger chord. Alternatively, hold `L4/Enter`, tap the Layer 4
+sticky `Shift`, then press the symbol key.
+
+Caps Word remains active through `Minus`, allowing identifiers such as
+`DO-NOT-DELETE` without reactivating Caps Word.
 
 As on Colemak-DH, the two outer columns remain transparent during the
 transition to 36 keys.
@@ -120,13 +135,13 @@ transition to 36 keys.
 | L | L1 | L2 | L3 | L4 | L5 | R5 | R4 | R3 | R2 | R1 | R  |
 |---|----|----|----|----|----|----|----|----|----|----|----|
 |   | 1  | 2  | 3  | 4  | 5  | 6  | 7  | 8  | 9  | 0  |    |
-|   | `  |  ~ | -  | =  | GLOBE | ←  | ↓  | ↑  | →  | ;  |    |
-|   | SHIFT/BSLH  | : | Caps Word | [ | ] |  PgDn |  PgUp | ,  | .  | SHIFT/FSLH |    |
-|   |    |    | BSPC | CMD/TAB |  | Space | Enter | CTRL/ESC |    |    |    |
+|   | `  | BSLH |  [ | ] | GLOBE | ←  | ↓  | ↑  | →  | ' |    |
+|   | TAB | ⌘⇧4 | Caps Word | &sk ALT | ESC |  PgDn |  PgUp | , [Ctrl→L4] | EQUAL | SHIFT |   |
+|   |    |    | BSPC | &sk CMD | &sk SHIFT | Space | L4/Enter | CTRL/MINUS |   |   |   |
 
 ## Combos
 
-| Keys                        | Action                                      |
-|-----------------------------|---------------------------------------------|
-| Q + S + Z (hold 2s)         | Soft off (deep sleep)                       |
-| Left layer thumb + Space    | QWERTY ↔ Colemak-DH                         |
+| Keys                                  | Action                |
+|---------------------------------------|-----------------------|
+| Q + S + Z (hold 2s)                   | Soft off (deep sleep) |
+| Physical left outer thumb + Space     | QWERTY ↔ Colemak-DH   |
