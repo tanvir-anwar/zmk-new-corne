@@ -14,7 +14,7 @@ layers:
   - O
   - P
   - '-'
-  - {t: \, h: GLOBE}
+  - {t: SYMBOL, h: SYMBOL}
   - A
   - S
   - D
@@ -29,7 +29,7 @@ layers:
   - L
   - ;
   - ''''
-  - {t: '=', h: LALT}
+  - '&alt_caps_word'
   - Z
   - X
   - C
@@ -41,120 +41,22 @@ layers:
   - M
   - ','
   - .
-  - /
+  - {t: /, h: RSHFT}
   - RSHFT
   - BSPC
-  - LCMD
-  - {t: SYMBOL, h: SYMBOL}
+  - '&cmd_symbol'
+  - {t: LSHFT, h: sticky}
   - SPACE
-  - {t: ENTER, h: FUNC}
+  - {t: ENTER, h: NAV/FN}
   - {t: ESC, h: RCTRL}
-  SYMBOL:
-  - '`'
-  - '!'
-  - '@'
-  - '#'
-  - $
-  - '%'
-  - UP
-  - ^
-  - '&'
-  - '*'
-  - (
-  - )
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - '1'
-  - '2'
-  - '3'
-  - '4'
-  - '5'
-  - LEFT
-  - ''
-  - RIGHT
-  - '6'
-  - '7'
-  - '8'
-  - '9'
-  - '0'
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - DOWN
-  - '['
-  - ']'
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {type: held}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  FUNC:
-  - '~'
-  - TAB
-  - MUTE
-  - F3
-  - '&screenshot'
-  - {t: ▽, type: trans}
-  - '&mmv MOVE_UP'
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - '&bootloader'
-  - BT CLR ALL
-  - ESC
-  - {t: BT, h: '0'}
-  - {t: BT, h: '1'}
-  - {t: BT, h: '2'}
-  - OUT USB
-  - '&mmv MOVE_LEFT'
-  - '&mkp LCLK'
-  - '&mmv MOVE_RIGHT'
-  - LEFT
-  - DOWN
-  - UP
-  - RIGHT
-  - '&mkp LCLK'
-  - '&mkp RCLK'
-  - {t: ▽, type: trans}
-  - RGB OFF
-  - RGB ON
-  - RGB EFF
-  - '&sys_reset'
-  - '&soft_off'
-  - {t: ▽, type: trans}
-  - '&mmv MOVE_DOWN'
-  - Gui+LEFT
-  - PG DN
-  - PG UP
-  - Gui+RIGHT
-  - '&cmd_click'
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {type: held}
-  - {t: ▽, type: trans}
   COLEMK:
   - {t: ▽, type: trans}
   - Q
   - W
   - F
   - P
-  - B
-  - UP
+  - G
+  - {t: ▽, type: trans}
   - J
   - L
   - U
@@ -166,11 +68,11 @@ layers:
   - R
   - S
   - T
-  - G
-  - LEFT
-  - ''
-  - RIGHT
-  - M
+  - D
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - H
   - N
   - E
   - I
@@ -180,42 +82,91 @@ layers:
   - Z
   - X
   - C
-  - D
   - V
-  - SPACE
-  - DOWN
-  - K
-  - H
-  - {t: ',', h: RALT, s: SYM-DH}
-  - .
-  - {t: /, h: RSHIFT}
+  - B
   - {t: ▽, type: trans}
-  - BSPC
-  - {t: LCMD, h: sticky}
-  - {t: LSHIFT, h: sticky}
-  - SPACE
-  - {t: ENTER, h: SYM-DH}
-  - {t: '-', h: RCTRL}
-  SYM-DH:
+  - {t: ▽, type: trans}
+  - K
+  - M
+  - ','
+  - .
+  - {t: /, h: RSHFT}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  SYMBOL:
   - {t: ▽, type: trans}
   - '1'
   - '2'
   - '3'
   - '4'
   - '5'
-  - '&mmv MOVE_UP'
+  - {t: ▽, type: trans}
   - '6'
   - '7'
   - '8'
   - '9'
   - '0'
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {type: held}
   - '`'
   - \
   - '['
   - ']'
-  - GLOBE
+  - {t: GLOBE, h: sticky}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: LSHFT, h: sticky}
+  - {t: LCMD, h: sticky}
+  - {t: LALT, h: sticky}
+  - {t: LCTRL, h: sticky}
+  - ''''
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '='
+  - '-'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  NAV/FN:
+  - '&sys_reset'
+  - TAB
+  - MUTE
+  - F3
+  - '&screenshot'
+  - {t: ▽, type: trans}
+  - '&mmv MOVE_UP'
+  - {t: ▽, type: trans}
+  - '&mkp LCLK'
+  - '&mkp RCLK'
+  - {t: ▽, type: trans}
+  - '-'
+  - '&bootloader'
+  - BT CLR ALL
+  - ESC
+  - {t: LCTRL, h: sticky}
+  - {t: LALT, h: sticky}
+  - {t: LCMD, h: sticky}
+  - '&caps_word'
   - '&mmv MOVE_LEFT'
   - '&mkp LCLK'
   - '&mmv MOVE_RIGHT'
@@ -225,26 +176,26 @@ layers:
   - RIGHT
   - ''''
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - TAB
-  - '&screenshot'
-  - '&caps_word'
-  - {t: LALT, h: sticky}
-  - ESC
+  - '&soft_off'
+  - RGB OFF
+  - RGB ON
+  - {t: BT, h: '0'}
+  - {t: BT, h: '1'}
+  - {t: BT, h: '2'}
   - {t: ▽, type: trans}
   - '&mmv MOVE_DOWN'
   - PG DN
   - PG UP
-  - {t: ',', s: SYM-DH}
-  - '='
-  - RSHFT
   - {t: ▽, type: trans}
-  - BSPC
-  - {t: LCMD, h: sticky}
-  - {t: LSHIFT, h: sticky}
-  - SPACE
-  - {t: ENTER, h: SYM-DH, type: held}
-  - {t: '-', h: RCTRL}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  - {t: ▽, type: trans}
 combos:
 - p: [1, 15, 29]
   k: '&soft_off'
