@@ -29,7 +29,7 @@ layers:
   - L
   - ;
   - ''''
-  - '&alt_caps_word'
+  - '&alt_caps_word LALT'
   - Z
   - X
   - C
@@ -44,7 +44,7 @@ layers:
   - {t: /, h: RSHFT}
   - RSHFT
   - BSPC
-  - '&cmd_symbol'
+  - {t: SYMBOL, h: LCMD}
   - {t: LSHFT, h: sticky}
   - SPACE
   - {t: ENTER, h: NAV/FN}
