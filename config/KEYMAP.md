@@ -16,7 +16,7 @@ The extra key (left of 5-way switch) and 5-way switch are omitted for clarity.
   The right outer thumb holds `Ctrl` or taps `Esc`. `Bksp`, `Space`, and `L3/Enter`
   retain dedicated thumb positions.
 - Pinky relief: high-frequency editing and primary modifiers live on the thumbs.
-  `Alt` remains available from `ALT/Caps Word` and as a sticky modifier on Symbol;
+  `Alt` remains available from the left pinky and as a sticky modifier on Symbol;
   the right pinky retains `SHIFT/FSLH`.
 - Identifier-friendly punctuation: `Semicolon` is on the Colemak base layer, `Minus`
   is on the Symbol layer, and Caps Word continues through `Minus`.
@@ -54,7 +54,7 @@ The extra key (left of 5-way switch) and 5-way switch are omitted for clarity.
 |-------|----|----|----|----|----|----|----|----|----|----|---------|
 | TAB   | Q  | W  | E  | R  | T  | Y  | U  | I  | O  | P  | MINUS   |
 | &mo_tog L2 | A  | S  | D  | F  | G  | H  | J  | K  | L  | ;  | '  |
-| ALT/Caps Word | Z  | X  | C  | V  | B  | N  | M  | ,  | .  | SHIFT/FSLH | SHIFT |
+| ALT | Z  | X  | C  | V  | B  | N  | M  | ,  | .  | SHIFT/FSLH | SHIFT |
 |  |  |  | BSPC | LCMD/&tog L2 | &sk SHIFT | Space | L3/Enter | CTRL/ESC | | |  |
 
 Encoder: Volume Up / Down
