@@ -136,7 +136,7 @@
             bindings = <
 &kp TAB         &kp Q  &kp W  &kp E     &kp R     &kp T                            &kp UP               &kp Y      &kp U        &kp I      &kp O    &kp P     &kp MINUS
 &mo_tog 2 2     &kp A  &kp S  &kp D     &kp F     &kp G                  &kp LEFT   &none    &kp RIGHT   &kp H      &kp J        &kp K      &kp L    &kp SEMI  &kp SQT
-&alt_caps_word LALT NONE  &kp Z  &kp X  &kp C     &kp V     &kp B     &kp SPACE               &kp DOWN             &kp N      &kp M        &kp COMMA  &kp DOT  &ht RSHFT FSLH  &kp RSHFT
+&kp LALT  &kp Z  &kp X  &kp C     &kp V     &kp B     &kp SPACE               &kp DOWN             &kp N      &kp M        &kp COMMA  &kp DOT  &ht RSHFT FSLH  &kp RSHFT
                               &kp BSPC  &cmd_symbol LCMD 2  &sk LSHFT                                           &kp SPACE  &lt 3 ENTER  &ht RCTRL ESC
             >;
 

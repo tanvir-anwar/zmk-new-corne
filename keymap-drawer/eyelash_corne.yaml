@@ -29,7 +29,7 @@ layers:
   - L
   - ;
   - ''''
-  - {t: '&caps_word NONE', h: LALT}
+  - LALT
   - Z
   - X
   - C
