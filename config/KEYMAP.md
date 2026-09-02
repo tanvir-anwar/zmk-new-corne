@@ -12,18 +12,18 @@ The extra key (left of 5-way switch) and 5-way switch are omitted for clarity.
 - **At most two simultaneous keys for every symbol:** symbols use either a direct key,
   a layer chord, or a sticky modifier followed by a layer chord. Sticky modifiers avoid
   three-finger chords while preserving familiar shifted-number relationships.
-- Thumb-cluster mods: `Cmd`/Symbol toggle and sticky `Shift` live on the left thumbs.
-  The right outer thumb holds `Ctrl` or taps `Esc`. `Bksp`, `Space`, and `L3/Enter`
-  retain dedicated thumb positions.
+- Thumb-cluster mods: dedicated `Cmd` and sticky `Shift` live on the left thumbs.
+  `L2/Space` and `L3/Enter` use tap-preferred layer-taps, while the right outer
+  thumb holds `Ctrl` or taps `Esc`.
 - Pinky relief: high-frequency editing and primary modifiers live on the thumbs.
-  `Alt` remains available from the left pinky and as a sticky modifier on Symbol;
-  the right pinky retains `SHIFT/FSLH`.
+  `Alt` remains available from the left outer column, from `ALT/Z`, and as a sticky
+  modifier on Symbol; the right pinky retains `SHIFT/FSLH`.
 - Identifier-friendly punctuation: `Semicolon` is on the Colemak base layer, `Minus`
   is on the Symbol layer, and Caps Word continues through `Minus`.
 - Avoid tap dance and printable-key combos for routine character entry. Reserve
-  combos for infrequent system or layout actions, and do not put timing ambiguity
-  on plain alpha keys.
-- `GLOBE` works for Globe-chords (emoji, Mission Control), not raw `Fn+key`.
+  combos for infrequent system or layout actions, and generally avoid timing
+  ambiguity on alpha keys. `ALT/Z` is the intentional exception because Z is the
+  least frequent letter in English and keeps Alt available in the 36-key layout.
 - Sticky `Shift` can be tapped before Symbol or while Symbol is held, then applies to
   the next number, bracket, or punctuation key.
 - Thumb bindings stay transparent on higher layers so their behavior remains consistent.
@@ -37,7 +37,7 @@ The extra key (left of 5-way switch) and 5-way switch are omitted for clarity.
 | _(blank)_ | Transparent — falls through to the layer below |
 | _(none)_ | No action |
 | hold/tap | Hold for first action, tap for second |
-| &mo_tog Ln | Hold-tap — hold for momentary Layer n, tap to toggle Layer n on/off (sticky) |
+| Ln/key | Tap-preferred layer-tap — hold for Layer n, tap for the key |
 | &sk MOD | Sticky modifier — tap for one-shot use, or hold as a normal modifier |
 | &tog Ln | Toggle Layer n on/off |
 | ⌘+key | Modified keycode — sends Cmd+key (not a macro) |
@@ -53,18 +53,18 @@ The extra key (left of 5-way switch) and 5-way switch are omitted for clarity.
 | L     | L1 | L2 | L3 | L4 | L5 | R5 | R4 | R3 | R2 | R1 | R       |
 |-------|----|----|----|----|----|----|----|----|----|----|---------|
 | TAB   | Q  | W  | E  | R  | T  | Y  | U  | I  | O  | P  | MINUS   |
-| &mo_tog L2 | A  | S  | D  | F  | G  | H  | J  | K  | L  | ;  | '  |
-| ALT | Z  | X  | C  | V  | B  | N  | M  | ,  | .  | SHIFT/FSLH | SHIFT |
-|  |  |  | BSPC | LCMD/&tog L2 | &sk SHIFT | Space | L3/Enter | CTRL/ESC | | |  |
+| Caps Lock | A  | S  | D  | F  | G  | H  | J  | K  | L  | ;  | '  |
+| ALT | ALT/Z  | X  | C  | V  | B  | N  | M  | ,  | .  | SHIFT/FSLH | SHIFT |
+|  |  |  | BSPC | CMD | &sk SHIFT | L2/Space | L3/Enter | CTRL/ESC | | |  |
 
 Encoder: Volume Up / Down
 Joystick: Arrow Keys
 
 ## Layer 1: Colemak
 
-From QWERTY, press the physical left outer thumb key (SHIFT) and the Space key
-together to switch to Colemak (vanilla, NOT DH). Press the same physical chord again to
-return to QWERTY.
+From QWERTY, press the sticky Shift thumb and the `L2/Space` thumb together to
+switch to Colemak (vanilla, NOT DH). Press the same physical chord again to return
+to QWERTY.
 
 The two outer columns remain transparent as temporary training aids while
 transitioning toward a 36-key layout.
@@ -73,19 +73,19 @@ transitioning toward a 36-key layout.
 |---|----|----|----|----|----|----|----|----|----|----|----|
 |   | Q  | W  | F  | P  | G  | J  | L  | U  | Y  | ;  |    |
 |   | A  | R  | S  | T  | D  | H  | N  | E  | I  | O  |    |
-|   | Z  | X  | C  | V  | B  | K  | M  | ,  | . | SHIFT/FSLH |  |
+|   | ALT/Z  | X  | C  | V  | B  | K  | M  | ,  | . | SHIFT/FSLH |  |
 |   |    |    |    |    |    |    |    |    |   |     |    |
 
 Encoder: Volume Up / Down
 Joystick: Arrow Keys
 
-## Layer 2: SYMBOL (hold L2)
+## Layer 2: SYMBOL (hold L2/Space; lock with &tog L2)
 
 | L | L1 | L2 | L3 | L4 | L5 | R5 | R4 | R3 | R2 | R1 | R  |
 |---|----|----|----|----|----|----|----|----|----|----|----|
 |   | 1  | 2  | 3  | 4  | 5  | 6  | 7  | 8  | 9  | 0  |    |
-|   | GRAVE | BSLH | [ |  ] | &sk GLOBE | &sk SHIFT | &sk CMD | &sk ALT | &sk CTRL | ' |   |
-|   |    |    |    |    |    | EQUAL | MINUS |    |    |    |    |
+|   | GRAVE | BSLH | [ |  ] | Caps Word | &sk SHIFT | &sk CMD | &sk ALT | &sk CTRL | ' |   |
+|   |    |    |  | &tog L2 | | EQUAL | MINUS |   |    |    |    |
 |   |    |    |    |    |    |    |    |    |    |    |    |
 
 Encoder: Scroll Down / Up
@@ -96,7 +96,7 @@ Joystick: Arrow Keys
 | L      | L1        | L2       | L3       | L4     | L5        | R5 | R4     | R3    | R2  | R1    | R          |
 |--------|-----------|----------|---------|---------|-----------|----|--------|-------|-----|-------|------------|
 | Reset  |    TAB    | Mute     |   F3    | ⌘⇧4     |           |    | LClick | RClick|     | MINUS | Bootloader |
-| BT Clr All | ESC   | &sk CTRL | &sk ALT | &sk CMD | Caps Word | ←    | ↓    | ↑     | →   | '     |   |
+| BT Clr All | Caps Lock | &sk CTRL | &sk ALT | &sk CMD | Caps Word | ←  | ↓      | ↑     | →   | '     |   |
 | Soft Off | RGB Off | RGB On   | BT 0    | BT 1    | BT 2      | PgDn | PgUp |       |     |       |   |
 |        |           |          |         |         |           |      |      |       |     |       |   |
 
@@ -108,4 +108,4 @@ Joystick: Mouse cursor (center-press = Left Click)
 | Keys                                  | Action                |
 |---------------------------------------|-----------------------|
 | Q + S + Z (hold 2s)                   | Soft off (deep sleep) |
-| Physical left outer thumb + Space     | QWERTY ↔ Colemak      |
+| Sticky Shift thumb + L2/Space thumb   | QWERTY ↔ Colemak      |

@@ -14,7 +14,7 @@ layers:
   - O
   - P
   - '-'
-  - {t: SYMBOL, h: SYMBOL}
+  - CAPS
   - A
   - S
   - D
@@ -30,7 +30,7 @@ layers:
   - ;
   - ''''
   - LALT
-  - Z
+  - {t: Z, h: LALT}
   - X
   - C
   - V
@@ -44,9 +44,9 @@ layers:
   - {t: /, h: RSHFT}
   - RSHFT
   - BSPC
-  - {t: SYMBOL, h: LCMD}
+  - LCMD
   - {t: LSHFT, h: sticky}
-  - SPACE
+  - {t: SPACE, h: SYMBOL}
   - {t: ENTER, h: NAV/FN}
   - {t: ESC, h: RCTRL}
   COLEMK:
@@ -79,7 +79,7 @@ layers:
   - O
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - Z
+  - {t: Z, h: LALT}
   - X
   - C
   - V
@@ -112,12 +112,12 @@ layers:
   - '9'
   - '0'
   - {t: ▽, type: trans}
-  - {type: held}
+  - {t: ▽, type: trans}
   - '`'
   - \
   - '['
   - ']'
-  - {t: GLOBE, h: sticky}
+  - '&caps_word'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -131,7 +131,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {t: SYMBOL, h: toggle}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -144,7 +144,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   NAV/FN:
@@ -162,7 +162,7 @@ layers:
   - '-'
   - '&bootloader'
   - BT CLR ALL
-  - ESC
+  - CAPS
   - {t: LCTRL, h: sticky}
   - {t: LALT, h: sticky}
   - {t: LCMD, h: sticky}
