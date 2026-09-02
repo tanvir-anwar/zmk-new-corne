@@ -79,13 +79,13 @@ transitioning toward a 36-key layout.
 Encoder: Volume Up / Down
 Joystick: Arrow Keys
 
-## Layer 2: SYMBOL (hold L2/Space; lock with &tog L2)
+## Layer 2: SYMBOL (hold L2/Space)
 
 | L | L1 | L2 | L3 | L4 | L5 | R5 | R4 | R3 | R2 | R1 | R  |
 |---|----|----|----|----|----|----|----|----|----|----|----|
 |   | 1  | 2  | 3  | 4  | 5  | 6  | 7  | 8  | 9  | 0  |    |
 |   | GRAVE | BSLH | [ |  ] | Caps Word | &sk SHIFT | &sk CMD | &sk ALT | &sk CTRL | ' |   |
-|   |    |    |  | &tog L2 | | EQUAL | MINUS |   |    |    |    |
+|   |    |    |  |  | | EQUAL | MINUS |   |    |    |    |
 |   |    |    |    |    |    |    |    |    |    |    |    |
 
 Encoder: Scroll Down / Up
@@ -93,9 +93,12 @@ Joystick: Arrow Keys
 
 ## Layer 3: FUNCTION (hold L3)
 
+Hold `L3/Enter` and press the physical T position (`&tog L2`) to lock or unlock
+the Symbol layer.
+
 | L      | L1        | L2       | L3       | L4     | L5        | R5 | R4     | R3    | R2  | R1    | R          |
 |--------|-----------|----------|---------|---------|-----------|----|--------|-------|-----|-------|------------|
-| Reset  |    TAB    | Mute     |   F3    | ⌘⇧4     |           |    | LClick | RClick|     | MINUS | Bootloader |
+| Reset  |    TAB    | Mute     |   F3    | ⌘⇧4     | &tog L2   |    | LClick | RClick|     | MINUS | Bootloader |
 | BT Clr All | Caps Lock | &sk CTRL | &sk ALT | &sk CMD | Caps Word | ←  | ↓      | ↑     | →   | '     |   |
 | Soft Off | RGB Off | RGB On   | BT 0    | BT 1    | BT 2      | PgDn | PgUp |       |     |       |   |
 |        |           |          |         |         |           |      |      |       |     |       |   |

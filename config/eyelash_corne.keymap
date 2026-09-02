@@ -131,7 +131,7 @@
             bindings = <
 &trans  &kp N1     &kp N2    &kp N3    &kp N4    &kp N5                        &trans                     &kp N6       &kp N7     &kp N8    &kp N9     &kp N0   &trans
 &trans  &kp GRAVE  &kp BSLH  &kp LBKT  &kp RBKT  &caps_word         &trans  &trans  &trans              &sk LSHFT    &sk LCMD   &sk LALT  &sk LCTRL  &kp SQT  &trans
-&trans  &trans     &trans    &trans    &tog 2    &trans  &trans             &trans                     &kp EQUAL    &kp MINUS  &trans     &trans     &trans   &trans
+&trans  &trans     &trans    &trans    &trans    &trans  &trans             &trans                     &kp EQUAL    &kp MINUS  &trans     &trans     &trans   &trans
                                       &trans    &trans  &trans                                                    &trans     &trans     &trans
             >;
 
@@ -141,7 +141,7 @@
         function_layer {
             display-name = "NAV/FN";
             bindings = <
-&sys_reset      &kp TAB       &kp C_MUTE      &kp F3         &screenshot       &trans                                 &mmv MOVE_UP                     &trans       &mkp LCLK  &mkp RCLK  &trans     &kp MINUS  &bootloader
+&sys_reset      &kp TAB       &kp C_MUTE      &kp F3         &screenshot       &tog 2                                 &mmv MOVE_UP                     &trans       &mkp LCLK  &mkp RCLK  &trans     &kp MINUS  &bootloader
 &bt BT_CLR_ALL  &kp CAPS      &sk LCTRL       &sk LALT       &sk LCMD          &caps_word              &mmv MOVE_LEFT  &mkp LCLK  &mmv MOVE_RIGHT  &kp LEFT     &kp DOWN    &kp UP     &kp RIGHT  &kp SQT    &trans
 &soft_off       &rgb_ug RGB_OFF  &rgb_ug RGB_ON  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &trans                  &mmv MOVE_DOWN                   &kp PG_DN    &kp PG_UP   &trans     &trans     &trans     &trans
                                                 &trans          &trans          &trans                                                        &trans       &trans      &trans
