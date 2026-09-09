@@ -1,0 +1,159 @@
+layout:
+  ortho_layout:
+    split: true
+    rows: 3
+    columns: 5
+    thumbs: 3
+layers:
+  L0:
+    - Q
+    - W
+    - E
+    - R
+    - T
+    - Y
+    - U
+    - I
+    - O
+    - P
+    - A
+    - S
+    - D
+    - F
+    - G
+    - H
+    - J
+    - K
+    - L
+    - ;
+    - {t: Z, h: LALT}
+    - X
+    - C
+    - V
+    - B
+    - N
+    - M
+    - {t: ',', s: '<'}
+    - {t: '.', s: '>'}
+    - {t: '/', h: RSFT, s: '?'}
+    - {t: TAB, h: CMD}
+    - BSPC
+    - {t: SHIFT, h: one-shot}
+    - {t: SPACE, h: L2}
+    - {t: ENTER, h: L3}
+    - {t: ESC, h: CTRL}
+  L1:
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - F
+    - P
+    - B
+    - J
+    - L
+    - U
+    - Y
+    - ;
+    - {t: ▽, type: trans}
+    - R
+    - S
+    - T
+    - {t: ▽, type: trans}
+    - M
+    - N
+    - E
+    - I
+    - O
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - D
+    - V
+    - K
+    - H
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+  L2:
+    - {t: '1', s: '!'}
+    - {t: '2', s: '@'}
+    - {t: '3', s: '#'}
+    - {t: '4', s: '$'}
+    - {t: '5', s: '%'}
+    - {t: '6', s: '^'}
+    - {t: '7', s: '&'}
+    - {t: '8', s: '*'}
+    - {t: '9', s: '('}
+    - {t: '0', s: ')'}
+    - {t: '`', s: '~'}
+    - {t: '\', s: '|'}
+    - {t: '[', s: '{'}
+    - {t: ']', s: '}'}
+    - CAPS WORD
+    - {t: SHIFT, h: one-shot}
+    - {t: CMD, h: one-shot}
+    - {t: ALT, h: one-shot}
+    - {t: CTRL, h: one-shot}
+    - {t: "'", s: '"'}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: '=', s: '+'}
+    - {t: '-', s: _}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {type: held}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+  L3:
+    - F1
+    - F2
+    - F3
+    - F4
+    - F5
+    - F6
+    - F7
+    - F8
+    - F9
+    - F10
+    - CAPS
+    - {t: CTRL, h: one-shot}
+    - {t: ALT, h: one-shot}
+    - {t: CMD, h: one-shot}
+    - CAPS WORD
+    - ←
+    - ↓
+    - ↑
+    - →
+    - {t: "'", s: '"'}
+    - F11
+    - F12
+    - {t: ▽, type: trans}
+    - {t: '4', h: '⌘⇧'}
+    - {t: ▽, type: trans}
+    - PG DN
+    - PG UP
+    - LCLICK
+    - RCLICK
+    - {t: L2, h: toggle}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {type: held}
+    - {t: ▽, type: trans}
+combos:
+  - p: [32, 33]
+    k: {t: L1, h: toggle}
+    l: [L0, L1]

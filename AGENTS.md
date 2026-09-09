@@ -6,6 +6,8 @@ ZMK firmware configuration for the **Eyelash Peripherals Corne** — a split erg
 
 Built on [ZMK Firmware](https://zmk.dev/) (v0.3.0) / Zephyr RTOS. The repo contains no traditional source code — it's devicetree overlays, Kconfig, and keymap definitions.
 
+The repository also tracks personal layouts for the USB-only **Beekeeb 3W6HS**. Those layouts use [Vial](https://get.vial.today/) / QMK and are independent of the ZMK Corne firmware.
+
 ## Repository Structure
 
 ```
@@ -14,6 +16,11 @@ config/
   eyelash_corne.keymap      # User keymap — layers, bindings, combos (primary edit target)
   eyelash_corne.conf        # Keyboard feature config (Bluetooth, sleep, RGB, etc.)
   eyelash_corne.json        # ZMK Studio layout metadata
+3w6hs/
+  factory-default.vil       # Untouched export of the stock 3W6HS Vial layout
+  corne-inner5.vil          # Personal 3W6HS layout derived from the Corne inner columns
+  corne-inner5.yaml         # Derived keymap-drawer input; not a second keymap source
+  corne-inner5.svg          # Generated diagram for manual review
 boards/arm/eyelash_corne/   # Board definition (also available as remote module via west.yml)
   eyelash_corne.dtsi        # Main devicetree include — pin mappings, peripherals
   eyelash_corne-layouts.dtsi # Physical layout definitions
@@ -42,6 +49,7 @@ MANUAL.md                   # User manual / documentation
 - **Feature toggles**: `config/eyelash_corne.conf` — enable/disable Bluetooth, RGB, deep sleep, etc.
 - **Build targets**: `build.yaml` — defines which board/shield combos to compile (left, right, studio, settings_reset)
 - **Board hardware**: `boards/arm/eyelash_corne/eyelash_corne.dtsi` — pin mappings and hardware peripherals
+- **3W6HS personal layout**: `3w6hs/corne-inner5.vil` — a loadable Vial layout; it is not ZMK firmware
 
 ## Build System
 
@@ -69,10 +77,77 @@ Keymap changes use a **markdown-first staging workflow**:
 
 The KEYMAP.md legend documents notation conventions (`hold/tap`, `[Sh/Caps]`, `<K1/K2>`, etc.) that map to specific ZMK behaviors. When adding new behavior types, update the legend first.
 
+## 3W6HS Vial Layout Workflow
+
+The 3W6HS is a USB-only, 36-key, 3×5+3 split. It has no Bluetooth, RGB,
+encoder, joystick, sleep, or soft-off controls. Do not carry those Corne
+actions into a 3W6HS layout.
+
+1. **Use the `.vil` file as the source of truth** — keep
+   `3w6hs/corne-inner5.vil` formatted with two-space JSON indentation. A
+   `.vil` is loaded from Vial into the keyboard's dynamic-keymap storage; it
+   is not firmware and must not be minified or flashed.
+2. **Preserve the factory metadata** — start from
+   `3w6hs/factory-default.vil` and retain its `uid`, protocol versions,
+   physical matrix shape, settings, and unused feature slots. Only change
+   intended key bindings, combos, or explicitly reviewed Vial settings.
+3. **Keep the Corne correspondence explicit** — the 3W6HS has the Corne
+   inner five columns (`L1`–`L5` and `R5`–`R1`) and six thumbs. Its matrix
+   order is not physical reading order:
+   - left fingers: rows 0–2, columns 0–4;
+   - left thumbs, outer to inner: row 3, columns 2–4;
+   - right fingers: rows 4–6, columns 0–4;
+   - right thumbs, inner to outer: row 7, columns 0–2.
+4. **Check firmware-backed behaviors** — a `.vil` can assign a QMK keycode,
+   but it cannot enable a feature that the flashed Vial firmware omitted.
+   Test `CW_TOGG` (Caps Word), `OSM(...)` (one-shot modifiers), and
+   `KC_MS_BTN1`/`KC_MS_BTN2` (mouse clicks) on hardware after loading. If a
+   feature is unavailable, the remedy is a separately authorized Vial/QMK
+   firmware build and flash, not a different `.vil` encoding.
+5. **Validate before loading** — confirm the JSON is valid and still has the
+   factory's 10 layers, 8×10 matrix, UID, and protocol versions. Load the
+   pretty-printed file directly in Vial and manually test every thumb,
+   layer-tap, combo, and layer toggle.
+6. **Generate a diagram, never hand-maintain a duplicate table** — use
+   [Vial To Keymap Drawer](https://github.com/YAL-Tools/vial-to-keymap-drawer)
+   to create an initial YAML rendering from the `.vil`, then retain a compact
+   derived file at `3w6hs/corne-inner5.yaml`. Do not duplicate the keymap in
+   `KEYMAP.md`.
+   - The diagram YAML uses keymap-drawer's normalized physical layout:
+     ```yaml
+     layout:
+       ortho_layout: {split: true, rows: 3, columns: 5, thumbs: 3}
+     ```
+     Its 36 key positions are physical reading order: left finger rows,
+     right finger rows, left thumbs outer-to-inner, then right thumbs
+     inner-to-outer. Do not use Vial's raw 8×10 matrix order as diagram
+     positions.
+   - The browser converter emits Vial's raw 8×10 matrix order. When the
+     `.vil` changes, rerun the converter, then update the compact YAML by
+     moving the 36 real keys into the physical order above and preserving
+     readable display labels. Compare every changed YAML binding against the
+     `.vil`; never treat the YAML as an independent source of truth.
+   - Translate any Vial matrix-based combo positions into that 36-key order.
+     The QWERTY ↔ Colemak-DH toggle is deliberately the **inner** thumb pair:
+     sticky Shift plus `L2/Space`. In the `.vil`, its trigger is
+     `OSM(MOD_LSFT)` + `LT2(KC_SPACE)` with output `TG(1)`; in the diagram
+     YAML, its positions are `[32, 33]`. Do not move it to the outer
+     `CMD/TAB` and `CTRL/ESC` thumbs. Show this combo on both `L0` and `L1`
+     in the diagram because `TG(1)` toggles Colemak-DH on and off.
+   - Render the tracked SVG with the repository's installed keymap-drawer:
+     ```bash
+     .venv/bin/keymap -c keymap_drawer.config.yaml draw \
+       3w6hs/corne-inner5.yaml > 3w6hs/corne-inner5.svg
+     ```
+     Regenerate the compact YAML and SVG whenever `corne-inner5.vil` changes.
+   - Visually inspect the SVG for thumb order, held layer-tap highlighting,
+     layer-toggle combo placement, and all layer bindings. Ask the user to
+     manually review it before committing.
+
 ## Coding Guidelines
 1. ALWAYS use conventional commits syntax to write commit messages.
-2. NEVER update keymap config unless KEYMAP.md changes are manually reviewed and confirmed.
-3. ALWAYS ask the user to manually review and validate the rendered keymap diagram, before the final commit. 
+2. NEVER update `config/eyelash_corne.keymap` unless `config/KEYMAP.md` changes are manually reviewed and confirmed. The formatted 3W6HS `.vil` file is its own design source and does not require a duplicate `KEYMAP.md`.
+3. ALWAYS ask the user to manually review and validate the rendered keymap diagram before the final commit.
 
 ## Conventions
 
