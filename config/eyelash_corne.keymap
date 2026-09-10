@@ -108,18 +108,18 @@
 &kp TAB         &kp Q  &kp W  &kp E     &kp R     &kp T                            &kp UP               &kp Y      &kp U        &kp I      &kp O    &kp P     &kp MINUS
 &kp CAPS        &kp A          &kp S  &kp D     &kp F     &kp G                  &kp LEFT   &none    &kp RIGHT   &kp H      &kp J        &kp K      &kp L    &kp SEMI  &kp SQT
 &kp LALT  &ht LALT Z  &kp X  &kp C     &kp V     &kp B     &kp SPACE               &kp DOWN             &kp N      &kp M        &kp COMMA  &kp DOT  &ht RSHFT FSLH  &kp RSHFT
-                              &kp BSPC  &kp LCMD  &sk LSHFT                                           &lt 2 SPACE  &lt 3 ENTER  &ht RCTRL ESC
+                              &ht LCMD TAB  &kp BSPC  &sk LSHFT                                           &lt 2 SPACE  &lt 3 ENTER  &ht RCTRL ESC
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
         };
 
         colemak_layer {
-            display-name = "COLEMK";
+            display-name = "COLEMAK-DH";
             bindings = <
-&trans  &kp Q  &kp W  &kp F  &kp P  &kp G                       &trans                       &kp J  &kp L  &kp U      &kp Y    &kp SEMI          &trans
-&trans  &kp A  &kp R  &kp S  &kp T  &kp D             &trans  &trans  &trans             &kp H  &kp N  &kp E      &kp I    &kp O             &trans
-&trans  &ht LALT Z  &kp X  &kp C  &kp V  &kp B  &trans              &trans                       &kp K  &kp M  &kp COMMA  &kp DOT  &ht RSHFT FSLH  &trans
+&trans  &kp Q  &kp W  &kp F  &kp P  &kp B                       &trans                       &kp J  &kp L  &kp U      &kp Y    &kp SEMI          &trans
+&trans  &kp A  &kp R  &kp S  &kp T  &kp G             &trans  &trans  &trans             &kp M  &kp N  &kp E      &kp I    &kp O             &trans
+&trans  &ht LALT Z  &kp X  &kp C  &kp D  &kp V  &trans              &trans                       &kp K  &kp H  &kp COMMA  &kp DOT  &ht RSHFT FSLH  &trans
                               &trans  &trans  &trans                                           &trans  &trans  &trans
             >;
 

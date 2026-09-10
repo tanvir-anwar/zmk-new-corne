@@ -43,19 +43,19 @@ layers:
   - .
   - {t: /, h: RSHFT}
   - RSHFT
+  - {t: TAB, h: LCMD}
   - BSPC
-  - LCMD
   - {t: LSHFT, h: sticky}
   - {t: SPACE, h: SYMBOL}
   - {t: ENTER, h: NAV/FN}
   - {t: ESC, h: RCTRL}
-  COLEMK:
+  COLEMAK-DH:
   - {t: ▽, type: trans}
   - Q
   - W
   - F
   - P
-  - G
+  - B
   - {t: ▽, type: trans}
   - J
   - L
@@ -68,11 +68,11 @@ layers:
   - R
   - S
   - T
-  - D
+  - G
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - H
+  - M
   - N
   - E
   - I
@@ -82,12 +82,12 @@ layers:
   - {t: Z, h: LALT}
   - X
   - C
+  - D
   - V
-  - B
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - K
-  - M
+  - H
   - ','
   - .
   - {t: /, h: RSHFT}
@@ -200,8 +200,8 @@ combos:
 - p: [1, 15, 29]
   k: '&soft_off'
 - p: [44, 45]
-  k: {t: COLEMK, h: toggle}
+  k: {t: COLEMAK-DH, h: toggle}
   l: [QWERTY]
 - p: [44, 45]
   k: {t: QWERTY, h: toggle}
-  l: [COLEMK]
+  l: [COLEMAK-DH]

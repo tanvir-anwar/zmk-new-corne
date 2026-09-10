@@ -60,6 +60,14 @@ Firmware is built via **GitHub Actions** (`.github/workflows/build.yml`). The `b
 
 Output: `.uf2` firmware files flashed via USB mass storage mode.
 
+## Keymap Diagram Generation
+
+Whenever a keymap SVG is generated or regenerated, immediately run
+`open <svg-path>` so the user can review it without a separate command. This
+applies to every keyboard layout, including Corne and 3W6HS. Visually inspect
+the diagram for layout-specific errors, then ask the user to manually review it
+before committing.
+
 ## Keymap Change Workflow
 
 Keymap changes use a **markdown-first staging workflow**:
@@ -104,6 +112,12 @@ actions into a 3W6HS layout.
    `KC_MS_BTN1`/`KC_MS_BTN2` (mouse clicks) on hardware after loading. If a
    feature is unavailable, the remedy is a separately authorized Vial/QMK
    firmware build and flash, not a different `.vil` encoding.
+   - **TODO (deferred):** build and flash a 3W6HS Vial firmware with
+     `CAPS_WORD_ENABLE = yes`, then reload `personal-3w6hs.vil` and verify
+     `CW_TOGG`. This is the only currently observed unsupported binding.
+   - **TODO (deferred):** include `LAYER_LOCK_ENABLE = yes` in that firmware
+     build and evaluate `QK_LLCK` for locking or unlocking momentary layers
+     without stacking Symbol and Nav/Fn overlays.
 5. **Validate before loading** — confirm the JSON is valid and still has the
    factory's 10 layers, 8×10 matrix, UID, and protocol versions. Load the
    pretty-printed file directly in Vial and manually test every thumb,
@@ -127,22 +141,19 @@ actions into a 3W6HS layout.
      moving the 36 real keys into the physical order above and preserving
      readable display labels. Compare every changed YAML binding against the
      `.vil`; never treat the YAML as an independent source of truth.
-   - Translate any Vial matrix-based combo positions into that 36-key order.
-     The QWERTY ↔ Colemak-DH toggle is deliberately the **inner** thumb pair:
-     sticky Shift plus `L2/Space`. In the `.vil`, its trigger is
-     `OSM(MOD_LSFT)` + `LT2(KC_SPACE)` with output `TG(1)`; in the diagram
-     YAML, its positions are `[32, 33]`. Do not move it to the outer
-     `CMD/TAB` and `CTRL/ESC` thumbs. Show this combo on both `L0` and `L1`
-     in the diagram because `TG(1)` toggles Colemak-DH on and off.
+   - The current active layers are L0 Colemak-DH, L1 Symbol, and L2 Nav/Fn;
+     the remaining Vial layers stay transparent. There is no base-layout
+     combo. The Z and X positions on each overlay use exclusive layer
+     selection: L1 has `TO(2)` / `TO(0)`, while L2 has `TO(1)` / `TO(0)`.
+     This prevents Symbol and Nav/Fn from stacking.
    - Render the tracked SVG with the repository's installed keymap-drawer:
      ```bash
-     .venv/bin/keymap -c keymap_drawer.config.yaml draw \
-       3w6hs/corne-inner5.yaml > 3w6hs/corne-inner5.svg
-     ```
-     Regenerate the compact YAML and SVG whenever `corne-inner5.vil` changes.
-   - Visually inspect the SVG for thumb order, held layer-tap highlighting,
-     layer-toggle combo placement, and all layer bindings. Ask the user to
-     manually review it before committing.
+   .venv/bin/keymap -c keymap_drawer.config.yaml draw \
+     3w6hs/corne-inner5.yaml > 3w6hs/corne-inner5.svg
+   ```
+   Regenerate the compact YAML and SVG whenever `corne-inner5.vil` changes.
+   Check thumb order, held layer-tap highlighting, layer-toggle placement, and
+   all layer bindings during the general diagram review.
 
 ## Coding Guidelines
 1. ALWAYS use conventional commits syntax to write commit messages.

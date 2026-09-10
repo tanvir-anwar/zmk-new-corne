@@ -12,7 +12,7 @@ The extra key (left of 5-way switch) and 5-way switch are omitted for clarity.
 - **At most two simultaneous keys for every symbol:** symbols use either a direct key,
   a layer chord, or a sticky modifier followed by a layer chord. Sticky modifiers avoid
   three-finger chords while preserving familiar shifted-number relationships.
-- Thumb-cluster mods: dedicated `Cmd` and sticky `Shift` live on the left thumbs.
+- Thumb cluster: the left thumbs provide `Cmd/Tab`, Backspace, and sticky Shift.
   `L2/Space` and `L3/Enter` use tap-preferred layer-taps, while the right outer
   thumb holds `Ctrl` or taps `Esc`.
 - Pinky relief: high-frequency editing and primary modifiers live on the thumbs.
@@ -55,25 +55,24 @@ The extra key (left of 5-way switch) and 5-way switch are omitted for clarity.
 | TAB   | Q  | W  | E  | R  | T  | Y  | U  | I  | O  | P  | MINUS   |
 | Caps Lock | A  | S  | D  | F  | G  | H  | J  | K  | L  | ;  | '  |
 | ALT | ALT/Z  | X  | C  | V  | B  | N  | M  | ,  | .  | SHIFT/FSLH | SHIFT |
-|  |  |  | BSPC | CMD | &sk SHIFT | L2/Space | L3/Enter | CTRL/ESC | | |  |
+|  |  |  | CMD/TAB | BSPC | &sk SHIFT | L2/Space | L3/Enter | CTRL/ESC | | |  |
 
 Encoder: Volume Up / Down
 Joystick: Arrow Keys
 
-## Layer 1: Colemak
+## Layer 1: Colemak-DH
 
 From QWERTY, press the sticky Shift thumb and the `L2/Space` thumb together to
-switch to Colemak (vanilla, NOT DH). Press the same physical chord again to return
-to QWERTY.
+switch to Colemak-DH. Press the same physical chord again to return to QWERTY.
 
 The two outer columns remain transparent as temporary training aids while
 transitioning toward a 36-key layout.
 
 | L | L1 | L2 | L3 | L4 | L5 | R5 | R4 | R3 | R2 | R1 | R  |
 |---|----|----|----|----|----|----|----|----|----|----|----|
-|   | Q  | W  | F  | P  | G  | J  | L  | U  | Y  | ;  |    |
-|   | A  | R  | S  | T  | D  | H  | N  | E  | I  | O  |    |
-|   | ALT/Z  | X  | C  | V  | B  | K  | M  | ,  | . | SHIFT/FSLH |  |
+|   | Q  | W  | F  | P  | B  | J  | L  | U  | Y  | ;  |    |
+|   | A  | R  | S  | T  | G  | M  | N  | E  | I  | O  |    |
+|   | ALT/Z  | X  | C  | D  | V  | K  | H  | ,  | . | SHIFT/FSLH |  |
 |   |    |    |    |    |    |    |    |    |   |     |    |
 
 Encoder: Volume Up / Down
@@ -111,4 +110,4 @@ Joystick: Mouse cursor (center-press = Left Click)
 | Keys                                  | Action                |
 |---------------------------------------|-----------------------|
 | Q + S + Z (hold 2s)                   | Soft off (deep sleep) |
-| Sticky Shift thumb + L2/Space thumb   | QWERTY ↔ Colemak      |
+| Sticky Shift thumb + L2/Space thumb   | QWERTY ↔ Colemak-DH   |
