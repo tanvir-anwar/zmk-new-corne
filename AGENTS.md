@@ -113,11 +113,8 @@ actions into a 3W6HS layout.
    feature is unavailable, the remedy is a separately authorized Vial/QMK
    firmware build and flash, not a different `.vil` encoding.
    - **TODO (deferred):** build and flash a 3W6HS Vial firmware with
-     `CAPS_WORD_ENABLE = yes`, then reload `personal-3w6hs.vil` and verify
+     `CAPS_WORD_ENABLE = yes`, then reload `corne-inner5.vil` and verify
      `CW_TOGG`. This is the only currently observed unsupported binding.
-   - **TODO (deferred):** include `LAYER_LOCK_ENABLE = yes` in that firmware
-     build and evaluate `QK_LLCK` for locking or unlocking momentary layers
-     without stacking Symbol and Nav/Fn overlays.
 5. **Validate before loading** — confirm the JSON is valid and still has the
    factory's 10 layers, 8×10 matrix, UID, and protocol versions. Load the
    pretty-printed file directly in Vial and manually test every thumb,
