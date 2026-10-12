@@ -1,44 +1,44 @@
 layout: {zmk_keyboard: eyelash_corne}
 layers:
-  QWERTY:
+  COLEMAK-DH:
   - TAB
   - Q
   - W
-  - E
-  - R
-  - T
-  - UP
-  - Y
-  - U
-  - I
-  - O
+  - F
   - P
+  - B
+  - UP
+  - J
+  - L
+  - U
+  - Y
+  - ;
   - '-'
   - CAPS
   - A
+  - R
   - S
-  - D
-  - F
+  - T
   - G
   - LEFT
   - ''
   - RIGHT
-  - H
-  - J
-  - K
-  - L
-  - ;
+  - M
+  - N
+  - E
+  - I
+  - O
   - ''''
   - LALT
   - {t: Z, h: LALT}
   - X
   - C
+  - D
   - V
-  - B
   - SPACE
   - DOWN
-  - N
-  - M
+  - K
+  - H
   - ','
   - .
   - {t: /, h: RSHFT}
@@ -49,45 +49,45 @@ layers:
   - {t: SPACE, h: SYMBOL}
   - {t: ENTER, h: NAV/FN}
   - {t: ESC, h: RCTRL}
-  COLEMAK-DH:
+  QWERTY:
   - {t: ▽, type: trans}
   - Q
   - W
-  - F
-  - P
-  - B
+  - E
+  - R
+  - T
   - {t: ▽, type: trans}
-  - J
-  - L
-  - U
   - Y
-  - ;
+  - U
+  - I
+  - O
+  - P
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - A
-  - R
   - S
-  - T
+  - D
+  - F
   - G
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - M
-  - N
-  - E
-  - I
-  - O
+  - H
+  - J
+  - K
+  - L
+  - ;
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: Z, h: LALT}
   - X
   - C
-  - D
   - V
+  - B
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - K
-  - H
+  - N
+  - M
   - ','
   - .
   - {t: /, h: RSHFT}
@@ -200,8 +200,8 @@ combos:
 - p: [1, 15, 29]
   k: '&soft_off'
 - p: [44, 45]
-  k: {t: COLEMAK-DH, h: toggle}
-  l: [QWERTY]
-- p: [44, 45]
   k: {t: QWERTY, h: toggle}
   l: [COLEMAK-DH]
+- p: [44, 45]
+  k: {t: COLEMAK-DH, h: toggle}
+  l: [QWERTY]

@@ -48,31 +48,31 @@ The extra key (left of 5-way switch) and 5-way switch are omitted for clarity.
 2. Hold Tap: https://zmk.dev/docs/keymaps/behaviors/hold-tap
 3. Sticky Key: https://zmk.dev/docs/keymaps/behaviors/sticky-key
 
-## Layer 0: QWERTY (default)
+## Layer 0: Colemak-DH (default)
 
 | L     | L1 | L2 | L3 | L4 | L5 | R5 | R4 | R3 | R2 | R1 | R       |
 |-------|----|----|----|----|----|----|----|----|----|----|---------|
-| TAB   | Q  | W  | E  | R  | T  | Y  | U  | I  | O  | P  | MINUS   |
-| Caps Lock | A  | S  | D  | F  | G  | H  | J  | K  | L  | ;  | '  |
-| ALT | ALT/Z  | X  | C  | V  | B  | N  | M  | ,  | .  | SHIFT/FSLH | SHIFT |
+| TAB   | Q  | W  | F  | P  | B  | J  | L  | U  | Y  | ;  | MINUS   |
+| Caps Lock | A  | R  | S  | T  | G  | M  | N  | E  | I  | O  | '  |
+| ALT | ALT/Z  | X  | C  | D  | V  | K  | H  | ,  | .  | SHIFT/FSLH | SHIFT |
 |  |  |  | CMD/TAB | BSPC | &sk SHIFT | L2/Space | L3/Enter | CTRL/ESC | | |  |
 
 Encoder: Volume Up / Down
 Joystick: Arrow Keys
 
-## Layer 1: Colemak-DH
+## Layer 1: QWERTY
 
-From QWERTY, press the sticky Shift thumb and the `L2/Space` thumb together to
-switch to Colemak-DH. Press the same physical chord again to return to QWERTY.
+From Colemak-DH, press the sticky Shift thumb and the `L2/Space` thumb together
+to switch to QWERTY. Press the same physical chord again to return to Colemak-DH.
 
-The two outer columns remain transparent as temporary training aids while
-transitioning toward a 36-key layout.
+The two outer columns remain transparent and fall back to the matching keys on
+the Colemak-DH layer.
 
 | L | L1 | L2 | L3 | L4 | L5 | R5 | R4 | R3 | R2 | R1 | R  |
 |---|----|----|----|----|----|----|----|----|----|----|----|
-|   | Q  | W  | F  | P  | B  | J  | L  | U  | Y  | ;  |    |
-|   | A  | R  | S  | T  | G  | M  | N  | E  | I  | O  |    |
-|   | ALT/Z  | X  | C  | D  | V  | K  | H  | ,  | . | SHIFT/FSLH |  |
+|   | Q  | W  | E  | R  | T  | Y  | U  | I  | O  | P  |    |
+|   | A  | S  | D  | F  | G  | H  | J  | K  | L  | ;  |    |
+|   | ALT/Z  | X  | C  | V  | B  | N  | M  | ,  | . | SHIFT/FSLH |  |
 |   |    |    |    |    |    |    |    |    |   |     |    |
 
 Encoder: Volume Up / Down
