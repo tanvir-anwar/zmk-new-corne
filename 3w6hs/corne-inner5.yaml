@@ -54,22 +54,22 @@ layers:
     - {t: '9', s: '('}
     - {t: '0', s: ')'}
     - {t: '`', s: '~'}
-    - {t: '\', s: '|'}
+    - '~'
     - {t: '[', s: '{'}
-    - {t: ']', s: '}'}
-    - CAPS WORD
-    - {t: SHIFT, h: one-shot}
-    - {t: CMD, h: one-shot}
-    - {t: ALT, h: one-shot}
-    - {t: CTRL, h: one-shot}
+    - '{'
+    - '('
+    - '|'
+    - {t: '-', s: _}
+    - {t: '=', s: '+'}
+    - '"'
     - {t: "'", s: '"'}
     - {t: L2, h: to}
     - {t: L0, h: to}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: '=', s: '+'}
-    - {t: '-', s: _}
+    - {t: ']', s: '}'}
+    - '}'
+    - ')'
+    - {t: '\', s: '|'}
+    - _
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}

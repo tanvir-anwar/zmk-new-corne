@@ -1,7 +1,7 @@
 layout: {zmk_keyboard: eyelash_corne}
 layers:
   COLEMAK-DH:
-  - TAB
+  - '`'
   - Q
   - W
   - F
@@ -114,29 +114,29 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - '`'
-  - \
+  - '~'
   - '['
-  - ']'
-  - '&caps_word'
+  - '{'
+  - (
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: LSHFT, h: sticky}
-  - {t: LCMD, h: sticky}
-  - {t: LALT, h: sticky}
-  - {t: LCTRL, h: sticky}
+  - '|'
+  - '-'
+  - '='
+  - '"'
   - ''''
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - ']'
+  - '}'
+  - )
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - '='
-  - '-'
+  - \
+  - _
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}

@@ -115,10 +115,10 @@
       ],
       [
         "KC_GRAVE",
-        "KC_BSLASH",
+        "KC_TILD",
         "KC_LBRACKET",
-        "KC_RBRACKET",
-        "CW_TOGG",
+        "KC_LCBR",
+        "KC_LPRN",
         -1,
         -1,
         -1,
@@ -128,9 +128,9 @@
       [
         "TO(2)",
         "TO(0)",
-        "KC_TRNS",
-        "KC_TRNS",
-        "KC_TRNS",
+        "KC_RBRACKET",
+        "KC_RCBR",
+        "KC_RPRN",
         -1,
         -1,
         -1,
@@ -162,10 +162,10 @@
         -1
       ],
       [
-        "OSM(MOD_LSFT)",
-        "OSM(MOD_LGUI)",
-        "OSM(MOD_LALT)",
-        "OSM(MOD_LCTL)",
+        "KC_PIPE",
+        "KC_MINUS",
+        "KC_EQUAL",
+        "KC_DQUO",
         "KC_QUOTE",
         -1,
         -1,
@@ -174,8 +174,8 @@
         -1
       ],
       [
-        "KC_EQUAL",
-        "KC_MINUS",
+        "KC_BSLASH",
+        "KC_UNDS",
         "KC_TRNS",
         "KC_TRNS",
         "KC_TRNS",

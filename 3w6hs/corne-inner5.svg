@@ -472,8 +472,7 @@ rect.held, rect.combo.held {
 <g transform="translate(90, 84)" class="key keypos-11">
 <rect rx="6" ry="6" x="-28" y="-26" width="56" height="52" class="key side"/>
 <rect rx="4" ry="4" x="-22" y="-24" width="44" height="40" class="key"/>
-<text x="0" y="-4" class="key tap">\</text>
-<text x="0" y="-24" class="key shifted">|</text>
+<text x="0" y="-4" class="key tap">~</text>
 </g>
 <g transform="translate(150, 84)" class="key keypos-12">
 <rect rx="6" ry="6" x="-28" y="-26" width="56" height="52" class="key side"/>
@@ -484,39 +483,34 @@ rect.held, rect.combo.held {
 <g transform="translate(210, 84)" class="key keypos-13">
 <rect rx="6" ry="6" x="-28" y="-26" width="56" height="52" class="key side"/>
 <rect rx="4" ry="4" x="-22" y="-24" width="44" height="40" class="key"/>
-<text x="0" y="-4" class="key tap">]</text>
-<text x="0" y="-24" class="key shifted">}</text>
+<text x="0" y="-4" class="key tap">{</text>
 </g>
 <g transform="translate(270, 84)" class="key keypos-14">
 <rect rx="6" ry="6" x="-28" y="-26" width="56" height="52" class="key side"/>
 <rect rx="4" ry="4" x="-22" y="-24" width="44" height="40" class="key"/>
-<text x="0" y="-4" class="key tap">
-<tspan x="0" dy="-0.6em">CAPS</tspan><tspan x="0" dy="1.2em">WORD</tspan>
-</text>
+<text x="0" y="-4" class="key tap">(</text>
 </g>
 <g transform="translate(360, 84)" class="key keypos-15">
 <rect rx="6" ry="6" x="-28" y="-26" width="56" height="52" class="key side"/>
 <rect rx="4" ry="4" x="-22" y="-24" width="44" height="40" class="key"/>
-<text x="0" y="-4" class="key tap">SHIFT</text>
-<text x="0" y="24" class="key hold"><tspan style="font-size: 75%">one-shot</tspan></text>
+<text x="0" y="-4" class="key tap">|</text>
 </g>
 <g transform="translate(420, 84)" class="key keypos-16">
 <rect rx="6" ry="6" x="-28" y="-26" width="56" height="52" class="key side"/>
 <rect rx="4" ry="4" x="-22" y="-24" width="44" height="40" class="key"/>
-<text x="0" y="-4" class="key tap">CMD</text>
-<text x="0" y="24" class="key hold"><tspan style="font-size: 75%">one-shot</tspan></text>
+<text x="0" y="-4" class="key tap">-</text>
+<text x="0" y="-24" class="key shifted">_</text>
 </g>
 <g transform="translate(480, 84)" class="key keypos-17">
 <rect rx="6" ry="6" x="-28" y="-26" width="56" height="52" class="key side"/>
 <rect rx="4" ry="4" x="-22" y="-24" width="44" height="40" class="key"/>
-<text x="0" y="-4" class="key tap">ALT</text>
-<text x="0" y="24" class="key hold"><tspan style="font-size: 75%">one-shot</tspan></text>
+<text x="0" y="-4" class="key tap">=</text>
+<text x="0" y="-24" class="key shifted">+</text>
 </g>
 <g transform="translate(540, 84)" class="key keypos-18">
 <rect rx="6" ry="6" x="-28" y="-26" width="56" height="52" class="key side"/>
 <rect rx="4" ry="4" x="-22" y="-24" width="44" height="40" class="key"/>
-<text x="0" y="-4" class="key tap">CTRL</text>
-<text x="0" y="24" class="key hold"><tspan style="font-size: 75%">one-shot</tspan></text>
+<text x="0" y="-4" class="key tap">&quot;</text>
 </g>
 <g transform="translate(600, 84)" class="key keypos-19">
 <rect rx="6" ry="6" x="-28" y="-26" width="56" height="52" class="key side"/>
@@ -538,32 +532,32 @@ rect.held, rect.combo.held {
 <text x="0" y="-4" class="key tap layer-activator">L0</text>
 </a><text x="0" y="24" class="key hold">to</text>
 </g>
-<g transform="translate(150, 140)" class="key trans keypos-22">
-<rect rx="6" ry="6" x="-28" y="-26" width="56" height="52" class="key trans side"/>
-<rect rx="4" ry="4" x="-22" y="-24" width="44" height="40" class="key trans"/>
-<text x="0" y="-4" class="key trans tap">▽</text>
+<g transform="translate(150, 140)" class="key keypos-22">
+<rect rx="6" ry="6" x="-28" y="-26" width="56" height="52" class="key side"/>
+<rect rx="4" ry="4" x="-22" y="-24" width="44" height="40" class="key"/>
+<text x="0" y="-4" class="key tap">]</text>
+<text x="0" y="-24" class="key shifted">}</text>
 </g>
-<g transform="translate(210, 140)" class="key trans keypos-23">
-<rect rx="6" ry="6" x="-28" y="-26" width="56" height="52" class="key trans side"/>
-<rect rx="4" ry="4" x="-22" y="-24" width="44" height="40" class="key trans"/>
-<text x="0" y="-4" class="key trans tap">▽</text>
+<g transform="translate(210, 140)" class="key keypos-23">
+<rect rx="6" ry="6" x="-28" y="-26" width="56" height="52" class="key side"/>
+<rect rx="4" ry="4" x="-22" y="-24" width="44" height="40" class="key"/>
+<text x="0" y="-4" class="key tap">}</text>
 </g>
-<g transform="translate(270, 140)" class="key trans keypos-24">
-<rect rx="6" ry="6" x="-28" y="-26" width="56" height="52" class="key trans side"/>
-<rect rx="4" ry="4" x="-22" y="-24" width="44" height="40" class="key trans"/>
-<text x="0" y="-4" class="key trans tap">▽</text>
+<g transform="translate(270, 140)" class="key keypos-24">
+<rect rx="6" ry="6" x="-28" y="-26" width="56" height="52" class="key side"/>
+<rect rx="4" ry="4" x="-22" y="-24" width="44" height="40" class="key"/>
+<text x="0" y="-4" class="key tap">)</text>
 </g>
 <g transform="translate(360, 140)" class="key keypos-25">
 <rect rx="6" ry="6" x="-28" y="-26" width="56" height="52" class="key side"/>
 <rect rx="4" ry="4" x="-22" y="-24" width="44" height="40" class="key"/>
-<text x="0" y="-4" class="key tap">=</text>
-<text x="0" y="-24" class="key shifted">+</text>
+<text x="0" y="-4" class="key tap">\</text>
+<text x="0" y="-24" class="key shifted">|</text>
 </g>
 <g transform="translate(420, 140)" class="key keypos-26">
 <rect rx="6" ry="6" x="-28" y="-26" width="56" height="52" class="key side"/>
 <rect rx="4" ry="4" x="-22" y="-24" width="44" height="40" class="key"/>
-<text x="0" y="-4" class="key tap">-</text>
-<text x="0" y="-24" class="key shifted">_</text>
+<text x="0" y="-4" class="key tap">_</text>
 </g>
 <g transform="translate(480, 140)" class="key trans keypos-27">
 <rect rx="6" ry="6" x="-28" y="-26" width="56" height="52" class="key trans side"/>
